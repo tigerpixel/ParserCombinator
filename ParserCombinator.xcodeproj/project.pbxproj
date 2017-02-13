@@ -330,6 +330,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ParserCombinator/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigerpixel.ParserCombinator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -349,6 +350,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ParserCombinator/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigerpixel.ParserCombinator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -400,6 +402,7 @@
 				0C07C2B11E5251BB00A921A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0C07C2B21E5251BB00A921A8 /* Build configuration list for PBXNativeTarget "ParserCombinatorTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +411,7 @@
 				0C07C2B41E5251BB00A921A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
