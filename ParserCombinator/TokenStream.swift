@@ -1,5 +1,5 @@
 //
-//  Stream.swift
+//  TokenStream.swift
 //  ParserCombinator
 //
 //  Created by Liam on 15/02/2017.
