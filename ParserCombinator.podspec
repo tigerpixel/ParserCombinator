@@ -14,7 +14,7 @@ A simple parser combinator, created in Swift. Functional parser combinators can 
 
   s.homepage         = 'https://github.com/tigerpixel/ParserCombinator'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { ‘Tigerpixel’ => 'l.flynn2@live.co.uk' }
+  s.author           = { 'Tigerpixel' => 'l.flynn2@live.co.uk' }
   s.source           = { :git => 'https://github.com/tigerpixel/ParserCombinator.git', :tag => s.version.to_s }
 
   s.requires_arc          = true
