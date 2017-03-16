@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0C07C2A51E5251BB00A921A8 /* ParserCombinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C07C29B1E5251BA00A921A8 /* ParserCombinator.framework */; };
-		0C07C2AA1E5251BB00A921A8 /* ParserCombinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C07C2A91E5251BB00A921A8 /* ParserCombinatorTests.swift */; };
 		0C07C2AC1E5251BB00A921A8 /* ParserCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C07C29E1E5251BA00A921A8 /* ParserCombinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0CC576441E5505720045BF4A /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC576431E5505720045BF4A /* Parser.swift */; };
-		0CC576481E5505BF0045BF4A /* ParseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC576471E5505BF0045BF4A /* ParseResult.swift */; };
-		0CC576551E55069B0045BF4A /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC576541E55069B0045BF4A /* ParserTests.swift */; };
-		0CC576571E5506DA0045BF4A /* ParseResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC576561E5506DA0045BF4A /* ParseResultTests.swift */; };
-		0CC576591E5507300045BF4A /* TokenStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC576581E5507300045BF4A /* TokenStream.swift */; };
-		0CC5765F1E5518620045BF4A /* Parser+Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC5765E1E5518620045BF4A /* Parser+Run.swift */; };
+		0C12421E1E7B1AA400457CBA /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421A1E7B1AA400457CBA /* Parser.swift */; };
+		0C12421F1E7B1AA400457CBA /* Parser+Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421B1E7B1AA400457CBA /* Parser+Run.swift */; };
+		0C1242201E7B1AA400457CBA /* ParseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421C1E7B1AA400457CBA /* ParseResult.swift */; };
+		0C1242211E7B1AA400457CBA /* TokenStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421D1E7B1AA400457CBA /* TokenStream.swift */; };
+		0C1242221E7B1B0A00457CBA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C1242121E7B1A8200457CBA /* Info.plist */; };
+		0C1242231E7B1B0D00457CBA /* ParseResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1242141E7B1A8200457CBA /* ParseResultTests.swift */; };
+		0C1242241E7B1B1000457CBA /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1242151E7B1A8200457CBA /* ParserTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,14 +33,18 @@
 		0C07C29E1E5251BA00A921A8 /* ParserCombinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParserCombinator.h; sourceTree = "<group>"; };
 		0C07C29F1E5251BA00A921A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C07C2A41E5251BB00A921A8 /* ParserCombinatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParserCombinatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C07C2A91E5251BB00A921A8 /* ParserCombinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserCombinatorTests.swift; sourceTree = "<group>"; };
-		0C07C2AB1E5251BB00A921A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0CC576431E5505720045BF4A /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
-		0CC576471E5505BF0045BF4A /* ParseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseResult.swift; sourceTree = "<group>"; };
-		0CC576541E55069B0045BF4A /* ParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
-		0CC576561E5506DA0045BF4A /* ParseResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseResultTests.swift; sourceTree = "<group>"; };
-		0CC576581E5507300045BF4A /* TokenStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenStream.swift; sourceTree = "<group>"; };
-		0CC5765E1E5518620045BF4A /* Parser+Run.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Parser+Run.swift"; sourceTree = "<group>"; };
+		0C12420A1E7B1A2500457CBA /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		0C12420B1E7B1A2500457CBA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		0C12420C1E7B1A2500457CBA /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		0C12420D1E7B1A2500457CBA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0C1242121E7B1A8200457CBA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C1242141E7B1A8200457CBA /* ParseResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseResultTests.swift; sourceTree = "<group>"; };
+		0C1242151E7B1A8200457CBA /* ParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
+		0C12421A1E7B1AA400457CBA /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		0C12421B1E7B1AA400457CBA /* Parser+Run.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Parser+Run.swift"; sourceTree = "<group>"; };
+		0C12421C1E7B1AA400457CBA /* ParseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseResult.swift; sourceTree = "<group>"; };
+		0C12421D1E7B1AA400457CBA /* TokenStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenStream.swift; sourceTree = "<group>"; };
+		0C1242251E7B1B8400457CBA /* ParserCombinator.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ParserCombinator.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +69,10 @@
 		0C07C2911E5251BA00A921A8 = {
 			isa = PBXGroup;
 			children = (
+				0C1242081E7B19BD00457CBA /* Docs */,
 				0C07C29D1E5251BA00A921A8 /* ParserCombinator */,
-				0C07C2A81E5251BB00A921A8 /* ParserCombinatorTests */,
+				0C1242061E7B19A000457CBA /* Source */,
+				0C1242071E7B19B700457CBA /* Tests */,
 				0C07C29C1E5251BA00A921A8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,21 +91,47 @@
 			children = (
 				0C07C29E1E5251BA00A921A8 /* ParserCombinator.h */,
 				0C07C29F1E5251BA00A921A8 /* Info.plist */,
-				0CC576431E5505720045BF4A /* Parser.swift */,
-				0CC5765E1E5518620045BF4A /* Parser+Run.swift */,
-				0CC576471E5505BF0045BF4A /* ParseResult.swift */,
-				0CC576581E5507300045BF4A /* TokenStream.swift */,
 			);
 			path = ParserCombinator;
 			sourceTree = "<group>";
 		};
-		0C07C2A81E5251BB00A921A8 /* ParserCombinatorTests */ = {
+		0C1242061E7B19A000457CBA /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				0C07C2A91E5251BB00A921A8 /* ParserCombinatorTests.swift */,
-				0C07C2AB1E5251BB00A921A8 /* Info.plist */,
-				0CC576541E55069B0045BF4A /* ParserTests.swift */,
-				0CC576561E5506DA0045BF4A /* ParseResultTests.swift */,
+				0C12421A1E7B1AA400457CBA /* Parser.swift */,
+				0C12421B1E7B1AA400457CBA /* Parser+Run.swift */,
+				0C12421C1E7B1AA400457CBA /* ParseResult.swift */,
+				0C12421D1E7B1AA400457CBA /* TokenStream.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		0C1242071E7B19B700457CBA /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0C1242091E7B1A1100457CBA /* ParserCombinatorTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		0C1242081E7B19BD00457CBA /* Docs */ = {
+			isa = PBXGroup;
+			children = (
+				0C1242251E7B1B8400457CBA /* ParserCombinator.podspec */,
+				0C12420C1E7B1A2500457CBA /* Package.swift */,
+				0C12420B1E7B1A2500457CBA /* LICENSE */,
+				0C12420D1E7B1A2500457CBA /* README.md */,
+				0C12420A1E7B1A2500457CBA /* CHANGELOG.md */,
+			);
+			name = Docs;
+			sourceTree = "<group>";
+		};
+		0C1242091E7B1A1100457CBA /* ParserCombinatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				0C1242121E7B1A8200457CBA /* Info.plist */,
+				0C1242141E7B1A8200457CBA /* ParseResultTests.swift */,
+				0C1242151E7B1A8200457CBA /* ParserTests.swift */,
 			);
 			path = ParserCombinatorTests;
 			sourceTree = "<group>";
@@ -118,9 +150,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0C07C29A1E5251BA00A921A8 /* ParserCombinator */ = {
+		0C07C29A1E5251BA00A921A8 /* ParserCombinator-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C07C2AF1E5251BB00A921A8 /* Build configuration list for PBXNativeTarget "ParserCombinator" */;
+			buildConfigurationList = 0C07C2AF1E5251BB00A921A8 /* Build configuration list for PBXNativeTarget "ParserCombinator-iOS" */;
 			buildPhases = (
 				0C07C2961E5251BA00A921A8 /* Sources */,
 				0C07C2971E5251BA00A921A8 /* Frameworks */,
@@ -131,7 +163,7 @@
 			);
 			dependencies = (
 			);
-			name = ParserCombinator;
+			name = "ParserCombinator-iOS";
 			productName = ParserCombinator;
 			productReference = 0C07C29B1E5251BA00A921A8 /* ParserCombinator.framework */;
 			productType = "com.apple.product-type.framework";
@@ -189,7 +221,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0C07C29A1E5251BA00A921A8 /* ParserCombinator */,
+				0C07C29A1E5251BA00A921A8 /* ParserCombinator-iOS */,
 				0C07C2A31E5251BB00A921A8 /* ParserCombinatorTests */,
 			);
 		};
@@ -207,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C1242221E7B1B0A00457CBA /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,10 +250,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CC576481E5505BF0045BF4A /* ParseResult.swift in Sources */,
-				0CC576591E5507300045BF4A /* TokenStream.swift in Sources */,
-				0CC576441E5505720045BF4A /* Parser.swift in Sources */,
-				0CC5765F1E5518620045BF4A /* Parser+Run.swift in Sources */,
+				0C12421F1E7B1AA400457CBA /* Parser+Run.swift in Sources */,
+				0C1242201E7B1AA400457CBA /* ParseResult.swift in Sources */,
+				0C1242211E7B1AA400457CBA /* TokenStream.swift in Sources */,
+				0C12421E1E7B1AA400457CBA /* Parser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,9 +261,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CC576571E5506DA0045BF4A /* ParseResultTests.swift in Sources */,
-				0CC576551E55069B0045BF4A /* ParserTests.swift in Sources */,
-				0C07C2AA1E5251BB00A921A8 /* ParserCombinatorTests.swift in Sources */,
+				0C1242241E7B1B1000457CBA /* ParserTests.swift in Sources */,
+				0C1242231E7B1B0D00457CBA /* ParseResultTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +271,7 @@
 /* Begin PBXTargetDependency section */
 		0C07C2A71E5251BB00A921A8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0C07C29A1E5251BA00A921A8 /* ParserCombinator */;
+			target = 0C07C29A1E5251BA00A921A8 /* ParserCombinator-iOS */;
 			targetProxy = 0C07C2A61E5251BB00A921A8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -359,7 +391,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigerpixel.ParserCombinator;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ParserCombinator;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -381,7 +413,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigerpixel.ParserCombinator;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ParserCombinator;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -392,7 +424,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = X9VLH29SKZ;
-				INFOPLIST_FILE = ParserCombinatorTests/Info.plist;
+				INFOPLIST_FILE = Tests/ParserCombinatorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigerpixel.ParserCombinatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -405,7 +437,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = X9VLH29SKZ;
-				INFOPLIST_FILE = ParserCombinatorTests/Info.plist;
+				INFOPLIST_FILE = Tests/ParserCombinatorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigerpixel.ParserCombinatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -425,7 +457,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0C07C2AF1E5251BB00A921A8 /* Build configuration list for PBXNativeTarget "ParserCombinator" */ = {
+		0C07C2AF1E5251BB00A921A8 /* Build configuration list for PBXNativeTarget "ParserCombinator-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C07C2B01E5251BB00A921A8 /* Debug */,
