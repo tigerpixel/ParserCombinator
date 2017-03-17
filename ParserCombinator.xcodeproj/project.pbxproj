@@ -170,8 +170,8 @@
 		0C07C29D1E5251BA00A921A8 /* ParserCombinator */ = {
 			isa = PBXGroup;
 			children = (
-				0C07C29E1E5251BA00A921A8 /* ParserCombinator.h */,
 				0C07C29F1E5251BA00A921A8 /* Info.plist */,
+				0C07C29E1E5251BA00A921A8 /* ParserCombinator.h */,
 			);
 			path = ParserCombinator;
 			sourceTree = "<group>";
@@ -211,8 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				0C1242121E7B1A8200457CBA /* Info.plist */,
-				0C1242141E7B1A8200457CBA /* ParseResultTests.swift */,
 				0C1242151E7B1A8200457CBA /* ParserTests.swift */,
+				0C1242141E7B1A8200457CBA /* ParseResultTests.swift */,
 			);
 			path = ParserCombinatorTests;
 			sourceTree = "<group>";
@@ -437,9 +437,9 @@
 			projectRoot = "";
 			targets = (
 				0C07C29A1E5251BA00A921A8 /* ParserCombinator-iOS */,
+				0C26E0FE1E7BDAEC00779771 /* ParserCombinator-watchOS */,
 				0C26E09B1E7BD82800779771 /* ParserCombinator-macOS */,
 				0C26E0B71E7BD84C00779771 /* ParserCombinator-tvOS */,
-				0C26E0FE1E7BDAEC00779771 /* ParserCombinator-watchOS */,
 				0C07C2A31E5251BB00A921A8 /* ParserCombinatorTests */,
 				0C26E0A31E7BD82900779771 /* ParserCombinatorTests-macOS */,
 				0C26E0BF1E7BD84D00779771 /* ParserCombinatorTests-tvOS */,
@@ -649,7 +649,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -696,7 +697,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
