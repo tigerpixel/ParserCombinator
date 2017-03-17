@@ -16,10 +16,10 @@
  */
 
 public enum ParseResult<Output> {
-    
+
     case success(result: Output, tail: TokenStream)
     case failure(details: ParseFailure)
-    
+
 }
 
 /**
@@ -29,15 +29,15 @@ public enum ParseResult<Output> {
  - custom: Used to convey custom parse failures when creating custom parsers.
  */
 
-public enum ParseFailure : Equatable {
-    
+public enum ParseFailure: Equatable {
+
     case insufficiantTokens
     case custom(message: String)
-    
+
 }
 
-public func ==(left: ParseFailure, right: ParseFailure) -> Bool {
-    
+public func == (left: ParseFailure, right: ParseFailure) -> Bool {
+
     switch(left, right) {
     case (.insufficiantTokens, .insufficiantTokens):
         return true

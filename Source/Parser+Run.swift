@@ -10,7 +10,7 @@
  The Parser operates on Character Views. These convienience methods take strings for ease of running.
 */
 public extension Parser {
-    
+
     /**
      Enact a single run of the parser on a subject string.
      
@@ -20,11 +20,11 @@ public extension Parser {
      
      - returns: A parse result containing the full generic result of the parse.
      */
-    
+
     func run(withInput input: String) -> ParseResult<Output> {
         return parse(input.characters)
     }
-    
+
     /**
      Enact a single run of the parser on a subject string. 
      
@@ -34,14 +34,14 @@ public extension Parser {
      
      - returns: The successfully parsed object if it is resolved. .none, if parsing fails.
      */
-    
+
     func runAndResolve(withInput input: String) -> Output? {
-        
+
         guard case .success(let result, _) = parse(input.characters) else {
             return nil
         }
-        
+
         return result
     }
-    
+
 }

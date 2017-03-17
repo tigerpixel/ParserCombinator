@@ -9,17 +9,15 @@
 import XCTest
 @testable import ParserCombinator
 
-// TODO: Test the equatable operator
-
 class ParseResultTests: XCTestCase {
-    
+
     func testParserResultEquality() {
-        
+
         XCTAssertEqual(ParseFailure.insufficiantTokens, .insufficiantTokens)
         XCTAssertEqual(ParseFailure.custom(message: "one"), .custom(message: "one"))
-        
+
         XCTAssertNotEqual(ParseFailure.insufficiantTokens, .custom(message: ""))
         XCTAssertNotEqual(ParseFailure.custom(message: "one"), .custom(message: "two"))
     }
-    
+
 }

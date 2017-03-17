@@ -13,7 +13,6 @@
 		0C12421F1E7B1AA400457CBA /* Parser+Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421B1E7B1AA400457CBA /* Parser+Run.swift */; };
 		0C1242201E7B1AA400457CBA /* ParseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421C1E7B1AA400457CBA /* ParseResult.swift */; };
 		0C1242211E7B1AA400457CBA /* TokenStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421D1E7B1AA400457CBA /* TokenStream.swift */; };
-		0C1242221E7B1B0A00457CBA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C1242121E7B1A8200457CBA /* Info.plist */; };
 		0C1242231E7B1B0D00457CBA /* ParseResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1242141E7B1A8200457CBA /* ParseResultTests.swift */; };
 		0C1242241E7B1B1000457CBA /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1242151E7B1A8200457CBA /* ParserTests.swift */; };
 /* End PBXBuildFile section */
@@ -158,6 +157,7 @@
 				0C07C2971E5251BA00A921A8 /* Frameworks */,
 				0C07C2981E5251BA00A921A8 /* Headers */,
 				0C07C2991E5251BA00A921A8 /* Resources */,
+				0C1242271E7B303900457CBA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -239,11 +239,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C1242221E7B1B0A00457CBA /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C1242271E7B303900457CBA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0C07C2961E5251BA00A921A8 /* Sources */ = {

@@ -11,8 +11,8 @@
  */
 
 public struct Parser<Output> {
-    
+
     ///Consumes zero, one or more tokens and resolve them into a result of the correct type.
     let parse: (TokenStream) -> ParseResult<Output>
-    
+
 }
