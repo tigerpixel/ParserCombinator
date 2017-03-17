@@ -15,6 +15,27 @@
 		0C1242211E7B1AA400457CBA /* TokenStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421D1E7B1AA400457CBA /* TokenStream.swift */; };
 		0C1242231E7B1B0D00457CBA /* ParseResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1242141E7B1A8200457CBA /* ParseResultTests.swift */; };
 		0C1242241E7B1B1000457CBA /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1242151E7B1A8200457CBA /* ParserTests.swift */; };
+		0C26E0A51E7BD82900779771 /* ParserCombinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C26E09C1E7BD82900779771 /* ParserCombinator.framework */; };
+		0C26E0C11E7BD84D00779771 /* ParserCombinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C26E0B81E7BD84C00779771 /* ParserCombinator.framework */; };
+		0C26E0EB1E7BDA0300779771 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421A1E7B1AA400457CBA /* Parser.swift */; };
+		0C26E0EC1E7BDA0300779771 /* Parser+Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421B1E7B1AA400457CBA /* Parser+Run.swift */; };
+		0C26E0ED1E7BDA0300779771 /* ParseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421C1E7B1AA400457CBA /* ParseResult.swift */; };
+		0C26E0EE1E7BDA0300779771 /* TokenStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421D1E7B1AA400457CBA /* TokenStream.swift */; };
+		0C26E0EF1E7BDA2800779771 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421A1E7B1AA400457CBA /* Parser.swift */; };
+		0C26E0F01E7BDA2800779771 /* Parser+Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421B1E7B1AA400457CBA /* Parser+Run.swift */; };
+		0C26E0F11E7BDA2800779771 /* ParseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421C1E7B1AA400457CBA /* ParseResult.swift */; };
+		0C26E0F21E7BDA2800779771 /* TokenStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421D1E7B1AA400457CBA /* TokenStream.swift */; };
+		0C26E0F71E7BDA4B00779771 /* ParserCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C07C29E1E5251BA00A921A8 /* ParserCombinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0C26E0F81E7BDA5800779771 /* ParserCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C07C29E1E5251BA00A921A8 /* ParserCombinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0C26E1071E7BDB2500779771 /* ParserCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C07C29E1E5251BA00A921A8 /* ParserCombinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0C26E1081E7BDB3B00779771 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421A1E7B1AA400457CBA /* Parser.swift */; };
+		0C26E1091E7BDB3B00779771 /* Parser+Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421B1E7B1AA400457CBA /* Parser+Run.swift */; };
+		0C26E10A1E7BDB3B00779771 /* ParseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421C1E7B1AA400457CBA /* ParseResult.swift */; };
+		0C26E10B1E7BDB3B00779771 /* TokenStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421D1E7B1AA400457CBA /* TokenStream.swift */; };
+		0C26E10C1E7BE73A00779771 /* ParseResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1242141E7B1A8200457CBA /* ParseResultTests.swift */; };
+		0C26E10D1E7BE73A00779771 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1242151E7B1A8200457CBA /* ParserTests.swift */; };
+		0C26E10E1E7BE77700779771 /* ParseResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1242141E7B1A8200457CBA /* ParseResultTests.swift */; };
+		0C26E10F1E7BE77700779771 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1242151E7B1A8200457CBA /* ParserTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +45,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0C07C29A1E5251BA00A921A8;
 			remoteInfo = ParserCombinator;
+		};
+		0C26E0A61E7BD82900779771 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C07C2921E5251BA00A921A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C26E09B1E7BD82800779771;
+			remoteInfo = "ParserCombinator-macOS";
+		};
+		0C26E0C21E7BD84D00779771 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C07C2921E5251BA00A921A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C26E0B71E7BD84C00779771;
+			remoteInfo = "ParserCombinator-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -44,6 +79,11 @@
 		0C12421C1E7B1AA400457CBA /* ParseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseResult.swift; sourceTree = "<group>"; };
 		0C12421D1E7B1AA400457CBA /* TokenStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenStream.swift; sourceTree = "<group>"; };
 		0C1242251E7B1B8400457CBA /* ParserCombinator.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ParserCombinator.podspec; sourceTree = "<group>"; };
+		0C26E09C1E7BD82900779771 /* ParserCombinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParserCombinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C26E0A41E7BD82900779771 /* ParserCombinatorTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ParserCombinatorTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C26E0B81E7BD84C00779771 /* ParserCombinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParserCombinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C26E0C01E7BD84D00779771 /* ParserCombinatorTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ParserCombinatorTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C26E0FF1E7BDAEC00779771 /* ParserCombinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParserCombinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +99,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C07C2A51E5251BB00A921A8 /* ParserCombinator.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C26E0981E7BD82800779771 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C26E0A11E7BD82900779771 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C26E0A51E7BD82900779771 /* ParserCombinator.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C26E0B41E7BD84C00779771 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C26E0BD1E7BD84D00779771 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C26E0C11E7BD84D00779771 /* ParserCombinator.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C26E0FB1E7BDAEC00779771 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +158,11 @@
 			children = (
 				0C07C29B1E5251BA00A921A8 /* ParserCombinator.framework */,
 				0C07C2A41E5251BB00A921A8 /* ParserCombinatorTests.xctest */,
+				0C26E09C1E7BD82900779771 /* ParserCombinator.framework */,
+				0C26E0A41E7BD82900779771 /* ParserCombinatorTests-macOS.xctest */,
+				0C26E0B81E7BD84C00779771 /* ParserCombinator.framework */,
+				0C26E0C01E7BD84D00779771 /* ParserCombinatorTests-tvOS.xctest */,
+				0C26E0FF1E7BDAEC00779771 /* ParserCombinator.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,6 +228,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0C26E0991E7BD82800779771 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C26E0F71E7BDA4B00779771 /* ParserCombinator.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C26E0B51E7BD84C00779771 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C26E0F81E7BDA5800779771 /* ParserCombinator.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C26E0FC1E7BDAEC00779771 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C26E1071E7BDB2500779771 /* ParserCombinator.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -186,6 +292,96 @@
 			productReference = 0C07C2A41E5251BB00A921A8 /* ParserCombinatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		0C26E09B1E7BD82800779771 /* ParserCombinator-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C26E0B11E7BD82900779771 /* Build configuration list for PBXNativeTarget "ParserCombinator-macOS" */;
+			buildPhases = (
+				0C26E0971E7BD82800779771 /* Sources */,
+				0C26E0981E7BD82800779771 /* Frameworks */,
+				0C26E0991E7BD82800779771 /* Headers */,
+				0C26E09A1E7BD82800779771 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ParserCombinator-macOS";
+			productName = "ParserCombinator-macOS";
+			productReference = 0C26E09C1E7BD82900779771 /* ParserCombinator.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0C26E0A31E7BD82900779771 /* ParserCombinatorTests-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C26E0B21E7BD82900779771 /* Build configuration list for PBXNativeTarget "ParserCombinatorTests-macOS" */;
+			buildPhases = (
+				0C26E0A01E7BD82900779771 /* Sources */,
+				0C26E0A11E7BD82900779771 /* Frameworks */,
+				0C26E0A21E7BD82900779771 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C26E0A71E7BD82900779771 /* PBXTargetDependency */,
+			);
+			name = "ParserCombinatorTests-macOS";
+			productName = "ParserCombinator-macOSTests";
+			productReference = 0C26E0A41E7BD82900779771 /* ParserCombinatorTests-macOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0C26E0B71E7BD84C00779771 /* ParserCombinator-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C26E0C91E7BD84D00779771 /* Build configuration list for PBXNativeTarget "ParserCombinator-tvOS" */;
+			buildPhases = (
+				0C26E0B31E7BD84C00779771 /* Sources */,
+				0C26E0B41E7BD84C00779771 /* Frameworks */,
+				0C26E0B51E7BD84C00779771 /* Headers */,
+				0C26E0B61E7BD84C00779771 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ParserCombinator-tvOS";
+			productName = "ParserCombinator-tvOS";
+			productReference = 0C26E0B81E7BD84C00779771 /* ParserCombinator.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0C26E0BF1E7BD84D00779771 /* ParserCombinatorTests-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C26E0CC1E7BD84D00779771 /* Build configuration list for PBXNativeTarget "ParserCombinatorTests-tvOS" */;
+			buildPhases = (
+				0C26E0BC1E7BD84D00779771 /* Sources */,
+				0C26E0BD1E7BD84D00779771 /* Frameworks */,
+				0C26E0BE1E7BD84D00779771 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C26E0C31E7BD84D00779771 /* PBXTargetDependency */,
+			);
+			name = "ParserCombinatorTests-tvOS";
+			productName = "ParserCombinator-tvOSTests";
+			productReference = 0C26E0C01E7BD84D00779771 /* ParserCombinatorTests-tvOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0C26E0FE1E7BDAEC00779771 /* ParserCombinator-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C26E1041E7BDAEC00779771 /* Build configuration list for PBXNativeTarget "ParserCombinator-watchOS" */;
+			buildPhases = (
+				0C26E0FA1E7BDAEC00779771 /* Sources */,
+				0C26E0FB1E7BDAEC00779771 /* Frameworks */,
+				0C26E0FC1E7BDAEC00779771 /* Headers */,
+				0C26E0FD1E7BDAEC00779771 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ParserCombinator-watchOS";
+			productName = "ParserCombinator-watchOS";
+			productReference = 0C26E0FF1E7BDAEC00779771 /* ParserCombinator.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -198,13 +394,32 @@
 				TargetAttributes = {
 					0C07C29A1E5251BA00A921A8 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = X9VLH29SKZ;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					0C07C2A31E5251BB00A921A8 = {
 						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					0C26E09B1E7BD82800779771 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Manual;
+					};
+					0C26E0A31E7BD82900779771 = {
+						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = X9VLH29SKZ;
+						ProvisioningStyle = Automatic;
+					};
+					0C26E0B71E7BD84C00779771 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					0C26E0BF1E7BD84D00779771 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					0C26E0FE1E7BDAEC00779771 = {
+						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -222,7 +437,12 @@
 			projectRoot = "";
 			targets = (
 				0C07C29A1E5251BA00A921A8 /* ParserCombinator-iOS */,
+				0C26E09B1E7BD82800779771 /* ParserCombinator-macOS */,
+				0C26E0B71E7BD84C00779771 /* ParserCombinator-tvOS */,
+				0C26E0FE1E7BDAEC00779771 /* ParserCombinator-watchOS */,
 				0C07C2A31E5251BB00A921A8 /* ParserCombinatorTests */,
+				0C26E0A31E7BD82900779771 /* ParserCombinatorTests-macOS */,
+				0C26E0BF1E7BD84D00779771 /* ParserCombinatorTests-tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -236,6 +456,41 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0C07C2A21E5251BB00A921A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C26E09A1E7BD82800779771 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C26E0A21E7BD82900779771 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C26E0B61E7BD84C00779771 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C26E0BE1E7BD84D00779771 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C26E0FD1E7BDAEC00779771 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -265,10 +520,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C12421E1E7B1AA400457CBA /* Parser.swift in Sources */,
 				0C12421F1E7B1AA400457CBA /* Parser+Run.swift in Sources */,
 				0C1242201E7B1AA400457CBA /* ParseResult.swift in Sources */,
 				0C1242211E7B1AA400457CBA /* TokenStream.swift in Sources */,
-				0C12421E1E7B1AA400457CBA /* Parser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +536,57 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0C26E0971E7BD82800779771 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C26E0EB1E7BDA0300779771 /* Parser.swift in Sources */,
+				0C26E0EC1E7BDA0300779771 /* Parser+Run.swift in Sources */,
+				0C26E0ED1E7BDA0300779771 /* ParseResult.swift in Sources */,
+				0C26E0EE1E7BDA0300779771 /* TokenStream.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C26E0A01E7BD82900779771 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C26E10D1E7BE73A00779771 /* ParserTests.swift in Sources */,
+				0C26E10C1E7BE73A00779771 /* ParseResultTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C26E0B31E7BD84C00779771 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C26E0EF1E7BDA2800779771 /* Parser.swift in Sources */,
+				0C26E0F01E7BDA2800779771 /* Parser+Run.swift in Sources */,
+				0C26E0F11E7BDA2800779771 /* ParseResult.swift in Sources */,
+				0C26E0F21E7BDA2800779771 /* TokenStream.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C26E0BC1E7BD84D00779771 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C26E10F1E7BE77700779771 /* ParserTests.swift in Sources */,
+				0C26E10E1E7BE77700779771 /* ParseResultTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C26E0FA1E7BDAEC00779771 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C26E1081E7BDB3B00779771 /* Parser.swift in Sources */,
+				0C26E1091E7BDB3B00779771 /* Parser+Run.swift in Sources */,
+				0C26E10A1E7BDB3B00779771 /* ParseResult.swift in Sources */,
+				0C26E10B1E7BDB3B00779771 /* TokenStream.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -288,6 +594,16 @@
 			isa = PBXTargetDependency;
 			target = 0C07C29A1E5251BA00A921A8 /* ParserCombinator-iOS */;
 			targetProxy = 0C07C2A61E5251BB00A921A8 /* PBXContainerItemProxy */;
+		};
+		0C26E0A71E7BD82900779771 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0C26E09B1E7BD82800779771 /* ParserCombinator-macOS */;
+			targetProxy = 0C26E0A61E7BD82900779771 /* PBXContainerItemProxy */;
+		};
+		0C26E0C31E7BD84D00779771 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0C26E0B71E7BD84C00779771 /* ParserCombinator-tvOS */;
+			targetProxy = 0C26E0C21E7BD84D00779771 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -394,16 +710,17 @@
 		0C07C2B01E5251BB00A921A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = X9VLH29SKZ;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ParserCombinator/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigerpixel.ParserCombinator;
 				PRODUCT_NAME = ParserCombinator;
@@ -416,16 +733,17 @@
 		0C07C2B11E5251BB00A921A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = X9VLH29SKZ;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ParserCombinator/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigerpixel.ParserCombinator;
 				PRODUCT_NAME = ParserCombinator;
@@ -438,7 +756,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = X9VLH29SKZ;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/ParserCombinatorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigerpixel.ParserCombinatorTests;
@@ -451,12 +769,216 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = X9VLH29SKZ;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/ParserCombinatorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigerpixel.ParserCombinatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		0C26E0AD1E7BD82900779771 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = ParserCombinator/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tigerpixel.ParserCombinator;
+				PRODUCT_NAME = ParserCombinator;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		0C26E0AE1E7BD82900779771 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = ParserCombinator/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tigerpixel.ParserCombinator;
+				PRODUCT_NAME = ParserCombinator;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		0C26E0AF1E7BD82900779771 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = X9VLH29SKZ;
+				INFOPLIST_FILE = Tests/ParserCombinatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tigerpixel.ParserCombinator-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		0C26E0B01E7BD82900779771 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = X9VLH29SKZ;
+				INFOPLIST_FILE = Tests/ParserCombinatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tigerpixel.ParserCombinator-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		0C26E0CA1E7BD84D00779771 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ParserCombinator/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tigerpixel.ParserCombinator;
+				PRODUCT_NAME = ParserCombinator;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		0C26E0CB1E7BD84D00779771 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ParserCombinator/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tigerpixel.ParserCombinator;
+				PRODUCT_NAME = ParserCombinator;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		0C26E0CD1E7BD84D00779771 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Tests/ParserCombinatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tigerpixel.ParserCombinator-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Debug;
+		};
+		0C26E0CE1E7BD84D00779771 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Tests/ParserCombinatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tigerpixel.ParserCombinator-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Release;
+		};
+		0C26E1051E7BDAEC00779771 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ParserCombinator/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tigerpixel.ParserCombinator;
+				PRODUCT_NAME = ParserCombinator;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		0C26E1061E7BDAEC00779771 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ParserCombinator/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tigerpixel.ParserCombinator;
+				PRODUCT_NAME = ParserCombinator;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -486,6 +1008,51 @@
 			buildConfigurations = (
 				0C07C2B31E5251BB00A921A8 /* Debug */,
 				0C07C2B41E5251BB00A921A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C26E0B11E7BD82900779771 /* Build configuration list for PBXNativeTarget "ParserCombinator-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C26E0AD1E7BD82900779771 /* Debug */,
+				0C26E0AE1E7BD82900779771 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C26E0B21E7BD82900779771 /* Build configuration list for PBXNativeTarget "ParserCombinatorTests-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C26E0AF1E7BD82900779771 /* Debug */,
+				0C26E0B01E7BD82900779771 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C26E0C91E7BD84D00779771 /* Build configuration list for PBXNativeTarget "ParserCombinator-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C26E0CA1E7BD84D00779771 /* Debug */,
+				0C26E0CB1E7BD84D00779771 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C26E0CC1E7BD84D00779771 /* Build configuration list for PBXNativeTarget "ParserCombinatorTests-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C26E0CD1E7BD84D00779771 /* Debug */,
+				0C26E0CE1E7BD84D00779771 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C26E1041E7BDAEC00779771 /* Build configuration list for PBXNativeTarget "ParserCombinator-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C26E1051E7BDAEC00779771 /* Debug */,
+				0C26E1061E7BDAEC00779771 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
