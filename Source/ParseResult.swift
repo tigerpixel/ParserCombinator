@@ -6,8 +6,6 @@
 //  Copyright © 2017 Tigerpixel Ltd. All rights reserved.
 //
 
-/// Parser combinator basic result struct.
-
 /**
  A result type for a single parse operation.
  
