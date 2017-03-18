@@ -4,10 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>ParserCombinator.xcscheme</key>
+		<key>ParserCombinator-iOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>ParserCombinator-macOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>ParserCombinator-tvOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>ParserCombinator-watchOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -18,6 +33,41 @@
 			<true/>
 		</dict>
 		<key>0C07C2A31E5251BB00A921A8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0C26E09B1E7BD82800779771</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0C26E0A31E7BD82900779771</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0C26E0B71E7BD84C00779771</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0C26E0BF1E7BD84D00779771</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0C26E0D31E7BD86A00779771</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0C26E0DB1E7BD86B00779771</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0C26E0FE1E7BDAEC00779771</key>
 		<dict>
 			<key>primary</key>
 			<true/>
