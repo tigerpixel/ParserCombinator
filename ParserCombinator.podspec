@@ -6,7 +6,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ParserCombinator'
-  s.version          = '0.3.0'
+  s.version          = '0.1.0'
   s.summary          = 'Exquisitely simple functional parsing in Swift.'
   s.description      = <<-DESC
 A simple parser combinator, created in Swift. Functional parser combinators can be extremely useful but can also be difficult to understand. ParserCombinator attempts to strip this back and create a simple and user friendly way to parse strings into other objects. Technical terms, like mooned, are avoided or explained if necessary and docs are provided in plain English, with examples. 
