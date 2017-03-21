@@ -15,3 +15,11 @@
  
  */
 public typealias TokenStream = String.CharacterView
+
+extension Character {
+
+    func tokenized() -> TokenStream {
+        return String(self).characters
+    }
+
+}
