@@ -1,5 +1,5 @@
 //
-//  CharacterParserTestHelpers.swift
+//  ParserFailureHelpers.swift
 //  ParserCombinator
 //
 //  Created by Liam on 21/03/2017.
@@ -10,9 +10,9 @@
 
 // MARK: Character test helper methods.
 
-struct CPTHelpers {
+struct ParserFailureHelpers {
 
-    static func runAndExpectInsufficiantCharacters(parser: Parser<Character>) -> Bool {
+    static func expectInsufficiantCharacters(parser: Parser<Character>) -> Bool {
 
         if case .failure(let reason) = parser.run(withInput: "") {
             return .insufficiantTokens == reason
@@ -21,11 +21,11 @@ struct CPTHelpers {
         return false
     }
 
-    static func runAndExpectUnexpectedToken(parser: Parser<Character>, with input: String)
+    static func expectUnexpectedToken(parser: Parser<Character>, with unexpectedToken: String)
         -> (token: TokenStream, tail: TokenStream)? {
 
         if
-            case .failure(let reason) = parser.run(withInput: input),
+            case .failure(let reason) = parser.run(withInput: unexpectedToken),
             case .unexpectedToken(let token, let tail) = reason
         {
             return (token: token, tail: tail)

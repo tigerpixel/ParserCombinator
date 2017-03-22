@@ -29,9 +29,9 @@
 		0C14378B1E7CC387006E3D06 /* CharacterParsersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1437861E7CC357006E3D06 /* CharacterParsersTests.swift */; };
 		0C14378C1E7CC387006E3D06 /* CharacterParsersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1437861E7CC357006E3D06 /* CharacterParsersTests.swift */; };
 		0C14378D1E7CC388006E3D06 /* CharacterParsersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1437861E7CC357006E3D06 /* CharacterParsersTests.swift */; };
-		0C1A360D1E81EB5E00915464 /* CharacterParserTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A360C1E81EB5E00915464 /* CharacterParserTestHelpers.swift */; };
-		0C1A360E1E81EB5E00915464 /* CharacterParserTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A360C1E81EB5E00915464 /* CharacterParserTestHelpers.swift */; };
-		0C1A360F1E81EB5E00915464 /* CharacterParserTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A360C1E81EB5E00915464 /* CharacterParserTestHelpers.swift */; };
+		0C1A360D1E81EB5E00915464 /* ParserFailureHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A360C1E81EB5E00915464 /* ParserFailureHelpers.swift */; };
+		0C1A360E1E81EB5E00915464 /* ParserFailureHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A360C1E81EB5E00915464 /* ParserFailureHelpers.swift */; };
+		0C1A360F1E81EB5E00915464 /* ParserFailureHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A360C1E81EB5E00915464 /* ParserFailureHelpers.swift */; };
 		0C1A36111E81EEE600915464 /* CharacterParserTests+PremadeParsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A36101E81EEE600915464 /* CharacterParserTests+PremadeParsers.swift */; };
 		0C1A36121E81EEE600915464 /* CharacterParserTests+PremadeParsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A36101E81EEE600915464 /* CharacterParserTests+PremadeParsers.swift */; };
 		0C1A36131E81EEE600915464 /* CharacterParserTests+PremadeParsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A36101E81EEE600915464 /* CharacterParserTests+PremadeParsers.swift */; };
@@ -106,7 +106,7 @@
 		0C1437811E7CC1AB006E3D06 /* Character+UnicodeScalar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Character+UnicodeScalar.swift"; sourceTree = "<group>"; };
 		0C1437861E7CC357006E3D06 /* CharacterParsersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CharacterParsersTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		0C1437871E7CC380006E3D06 /* Character+UnicodeScalarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Character+UnicodeScalarTests.swift"; sourceTree = "<group>"; };
-		0C1A360C1E81EB5E00915464 /* CharacterParserTestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterParserTestHelpers.swift; sourceTree = "<group>"; };
+		0C1A360C1E81EB5E00915464 /* ParserFailureHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserFailureHelpers.swift; sourceTree = "<group>"; };
 		0C1A36101E81EEE600915464 /* CharacterParserTests+PremadeParsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "CharacterParserTests+PremadeParsers.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		0C1A36141E81EFAB00915464 /* CharacterParserTests+SpecialCharacters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharacterParserTests+SpecialCharacters.swift"; sourceTree = "<group>"; };
 		0C26E09C1E7BD82900779771 /* ParserCombinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParserCombinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -278,7 +278,7 @@
 		0C1437911E7CC9AC006E3D06 /* ConvienienceParsers */ = {
 			isa = PBXGroup;
 			children = (
-				0C1A360C1E81EB5E00915464 /* CharacterParserTestHelpers.swift */,
+				0C1A360C1E81EB5E00915464 /* ParserFailureHelpers.swift */,
 				0C1437861E7CC357006E3D06 /* CharacterParsersTests.swift */,
 				0C1A36101E81EEE600915464 /* CharacterParserTests+PremadeParsers.swift */,
 				0C1A36141E81EFAB00915464 /* CharacterParserTests+SpecialCharacters.swift */,
@@ -607,7 +607,7 @@
 				0C1A36151E81EFAB00915464 /* CharacterParserTests+SpecialCharacters.swift in Sources */,
 				0C1A36111E81EEE600915464 /* CharacterParserTests+PremadeParsers.swift in Sources */,
 				0C14378B1E7CC387006E3D06 /* CharacterParsersTests.swift in Sources */,
-				0C1A360D1E81EB5E00915464 /* CharacterParserTestHelpers.swift in Sources */,
+				0C1A360D1E81EB5E00915464 /* ParserFailureHelpers.swift in Sources */,
 				0C1242231E7B1B0D00457CBA /* ParseResultTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,7 +634,7 @@
 				0C1A36161E81EFAB00915464 /* CharacterParserTests+SpecialCharacters.swift in Sources */,
 				0C1A36121E81EEE600915464 /* CharacterParserTests+PremadeParsers.swift in Sources */,
 				0C14378C1E7CC387006E3D06 /* CharacterParsersTests.swift in Sources */,
-				0C1A360E1E81EB5E00915464 /* CharacterParserTestHelpers.swift in Sources */,
+				0C1A360E1E81EB5E00915464 /* ParserFailureHelpers.swift in Sources */,
 				0C26E10C1E7BE73A00779771 /* ParseResultTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -661,7 +661,7 @@
 				0C1A36171E81EFAB00915464 /* CharacterParserTests+SpecialCharacters.swift in Sources */,
 				0C1A36131E81EEE600915464 /* CharacterParserTests+PremadeParsers.swift in Sources */,
 				0C14378D1E7CC388006E3D06 /* CharacterParsersTests.swift in Sources */,
-				0C1A360F1E81EB5E00915464 /* CharacterParserTestHelpers.swift in Sources */,
+				0C1A360F1E81EB5E00915464 /* ParserFailureHelpers.swift in Sources */,
 				0C26E10E1E7BE77700779771 /* ParseResultTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

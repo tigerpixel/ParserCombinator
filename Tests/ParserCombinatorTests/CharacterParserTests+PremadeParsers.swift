@@ -45,21 +45,21 @@ extension CharacterParserTests {
             XCTFail()
         }
 
-        if let unexpectedToken = CPTHelpers.runAndExpectUnexpectedToken(parser: parserUnderTest, with: "1234") {
+        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: parserUnderTest, with: "1234") {
             XCTAssertEqual("1", String(unexpectedToken.token))
             XCTAssertEqual("234", String(unexpectedToken.tail))
         } else {
             XCTFail()
         }
 
-        if let unexpectedToken = CPTHelpers.runAndExpectUnexpectedToken(parser: parserUnderTest, with: "1") {
+        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: parserUnderTest, with: "1") {
             XCTAssertEqual("1", String(unexpectedToken.token))
             XCTAssertEqual("", String(unexpectedToken.tail))
         } else {
             XCTFail()
         }
 
-        XCTAssert(CPTHelpers.runAndExpectInsufficiantCharacters(parser: parserUnderTest))
+        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: parserUnderTest))
     }
 
     func testCharacterIsLoweraseLetter() {
@@ -87,21 +87,21 @@ extension CharacterParserTests {
             XCTFail()
         }
 
-        if let unexpectedToken = CPTHelpers.runAndExpectUnexpectedToken(parser: parserUnderTest, with: "Abcd") {
+        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: parserUnderTest, with: "Abcd") {
             XCTAssertEqual("A", String(unexpectedToken.token))
             XCTAssertEqual("bcd", String(unexpectedToken.tail))
         } else {
             XCTFail()
         }
 
-        if let unexpectedToken = CPTHelpers.runAndExpectUnexpectedToken(parser: parserUnderTest, with: "A") {
+        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: parserUnderTest, with: "A") {
             XCTAssertEqual("A", String(unexpectedToken.token))
             XCTAssertEqual("", String(unexpectedToken.tail))
         } else {
             XCTFail()
         }
 
-        XCTAssert(CPTHelpers.runAndExpectInsufficiantCharacters(parser: parserUnderTest))
+        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: parserUnderTest))
     }
 
     func testCharacterIsUppercaseLetter() {
@@ -129,21 +129,21 @@ extension CharacterParserTests {
             XCTFail()
         }
 
-        if let unexpectedToken = CPTHelpers.runAndExpectUnexpectedToken(parser: parserUnderTest, with: "aBCD") {
+        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: parserUnderTest, with: "aBCD") {
             XCTAssertEqual("a", String(unexpectedToken.token))
             XCTAssertEqual("BCD", String(unexpectedToken.tail))
         } else {
             XCTFail()
         }
 
-        if let unexpectedToken = CPTHelpers.runAndExpectUnexpectedToken(parser: parserUnderTest, with: "a") {
+        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: parserUnderTest, with: "a") {
             XCTAssertEqual("a", String(unexpectedToken.token))
             XCTAssertEqual("", String(unexpectedToken.tail))
         } else {
             XCTFail()
         }
 
-        XCTAssert(CPTHelpers.runAndExpectInsufficiantCharacters(parser: parserUnderTest))
+        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: parserUnderTest))
     }
 
     func testCharacterIsAlphanumeric() {
@@ -178,21 +178,21 @@ extension CharacterParserTests {
             XCTFail()
         }
 
-        if let unexpectedToken = CPTHelpers.runAndExpectUnexpectedToken(parser: parserUnderTest, with: "#BCD") {
+        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: parserUnderTest, with: "#BCD") {
             XCTAssertEqual("#", String(unexpectedToken.token))
             XCTAssertEqual("BCD", String(unexpectedToken.tail))
         } else {
             XCTFail()
         }
 
-        if let unexpectedToken = CPTHelpers.runAndExpectUnexpectedToken(parser: parserUnderTest, with: "#") {
+        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: parserUnderTest, with: "#") {
             XCTAssertEqual("#", String(unexpectedToken.token))
             XCTAssertEqual("", String(unexpectedToken.tail))
         } else {
             XCTFail()
         }
 
-        XCTAssert(CPTHelpers.runAndExpectInsufficiantCharacters(parser: parserUnderTest))
+        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: parserUnderTest))
     }
 
     func testCharacterIsDigit() {
@@ -213,21 +213,21 @@ extension CharacterParserTests {
             XCTFail()
         }
 
-        if let unexpectedToken = CPTHelpers.runAndExpectUnexpectedToken(parser: parserUnderTest, with: "#123") {
+        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: parserUnderTest, with: "#123") {
             XCTAssertEqual("#", String(unexpectedToken.token))
             XCTAssertEqual("123", String(unexpectedToken.tail))
         } else {
             XCTFail()
         }
 
-        if let unexpectedToken = CPTHelpers.runAndExpectUnexpectedToken(parser: parserUnderTest, with: "A") {
+        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: parserUnderTest, with: "A") {
             XCTAssertEqual("A", String(unexpectedToken.token))
             XCTAssertEqual("", String(unexpectedToken.tail))
         } else {
             XCTFail()
         }
 
-        XCTAssert(CPTHelpers.runAndExpectInsufficiantCharacters(parser: parserUnderTest))
+        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: parserUnderTest))
 
     }
 
@@ -249,21 +249,21 @@ extension CharacterParserTests {
             XCTFail()
         }
 
-        if let unexpectedToken = CPTHelpers.runAndExpectUnexpectedToken(parser: parserUnderTest, with: "#   ") {
+        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: parserUnderTest, with: "#   ") {
             XCTAssertEqual("#", String(unexpectedToken.token))
             XCTAssertEqual("   ", String(unexpectedToken.tail))
         } else {
             XCTFail()
         }
 
-        if let unexpectedToken = CPTHelpers.runAndExpectUnexpectedToken(parser: parserUnderTest, with: "A") {
+        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: parserUnderTest, with: "A") {
             XCTAssertEqual("A", String(unexpectedToken.token))
             XCTAssertEqual("", String(unexpectedToken.tail))
         } else {
             XCTFail()
         }
 
-        XCTAssert(CPTHelpers.runAndExpectInsufficiantCharacters(parser: parserUnderTest))
+        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: parserUnderTest))
     }
 
     func testCharacterIsNewline() {
@@ -283,21 +283,21 @@ extension CharacterParserTests {
             XCTFail()
         }
 
-        if let unexpectedToken = CPTHelpers.runAndExpectUnexpectedToken(parser: parserUnderTest, with: "#\n") {
+        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: parserUnderTest, with: "#\n") {
             XCTAssertEqual("#", String(unexpectedToken.token))
             XCTAssertEqual("\n", String(unexpectedToken.tail))
         } else {
             XCTFail()
         }
 
-        if let unexpectedToken = CPTHelpers.runAndExpectUnexpectedToken(parser: parserUnderTest, with: "A") {
+        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: parserUnderTest, with: "A") {
             XCTAssertEqual("A", String(unexpectedToken.token))
             XCTAssertEqual("", String(unexpectedToken.tail))
         } else {
             XCTFail()
         }
 
-        XCTAssert(CPTHelpers.runAndExpectInsufficiantCharacters(parser: parserUnderTest))
+        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: parserUnderTest))
 
     }
 
@@ -325,21 +325,21 @@ extension CharacterParserTests {
             XCTFail()
         }
 
-        if let unexpectedToken = CPTHelpers.runAndExpectUnexpectedToken(parser: parserUnderTest, with: "#\n ") {
+        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: parserUnderTest, with: "#\n ") {
             XCTAssertEqual("#", String(unexpectedToken.token))
             XCTAssertEqual("\n ", String(unexpectedToken.tail))
         } else {
             XCTFail()
         }
 
-        if let unexpectedToken = CPTHelpers.runAndExpectUnexpectedToken(parser: parserUnderTest, with: "A") {
+        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: parserUnderTest, with: "A") {
             XCTAssertEqual("A", String(unexpectedToken.token))
             XCTAssertEqual("", String(unexpectedToken.tail))
         } else {
             XCTFail()
         }
 
-        XCTAssert(CPTHelpers.runAndExpectInsufficiantCharacters(parser: parserUnderTest))
+        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: parserUnderTest))
     }
 
 }

@@ -36,21 +36,21 @@ extension CharacterParserTests {
             XCTFail()
         }
 
-        if let unexpectedToken = CPTHelpers.runAndExpectUnexpectedToken(parser: comma, with: "not a comma") {
+        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: comma, with: "not a comma") {
             XCTAssertEqual("n", String(unexpectedToken.token))
             XCTAssertEqual("ot a comma", String(unexpectedToken.tail))
         } else {
             XCTFail()
         }
 
-        if let unexpectedToken = CPTHelpers.runAndExpectUnexpectedToken(parser: comma, with: "1,") {
+        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: comma, with: "1,") {
             XCTAssertEqual("1", String(unexpectedToken.token))
             XCTAssertEqual(",", String(unexpectedToken.tail))
         } else {
             XCTFail()
         }
 
-        XCTAssert(CPTHelpers.runAndExpectInsufficiantCharacters(parser: comma))
+        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: comma))
 
     }
 
@@ -77,21 +77,21 @@ extension CharacterParserTests {
             XCTFail()
         }
 
-        if let unexpectedToken = CPTHelpers.runAndExpectUnexpectedToken(parser: fullstop, with: "not a full stop") {
+        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: fullstop, with: "not a full stop") {
             XCTAssertEqual("n", String(unexpectedToken.token))
             XCTAssertEqual("ot a full stop", String(unexpectedToken.tail))
         } else {
             XCTFail()
         }
 
-        if let unexpectedToken = CPTHelpers.runAndExpectUnexpectedToken(parser: fullstop, with: "1.") {
+        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: fullstop, with: "1.") {
             XCTAssertEqual("1", String(unexpectedToken.token))
             XCTAssertEqual(".", String(unexpectedToken.tail))
         } else {
             XCTFail()
         }
 
-        XCTAssert(CPTHelpers.runAndExpectInsufficiantCharacters(parser: fullstop))
+        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: fullstop))
     }
 
 }
