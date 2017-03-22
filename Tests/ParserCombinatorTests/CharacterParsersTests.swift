@@ -17,21 +17,21 @@ class CharacterParserTests: XCTestCase {
 
         let parserUnderTest = character { $0 == "A" }
 
-        if let results = CPTHelpers.run(parser: parserUnderTest, with: "A") {
+        if case .success(let results) = parserUnderTest.run(withInput: "A") {
             XCTAssertEqual("A", String(results.result))
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
-        if let results = CPTHelpers.run(parser: parserUnderTest, with: "AA") {
+        if case .success(let results) = parserUnderTest.run(withInput: "AA") {
             XCTAssertEqual("A", String(results.result))
             XCTAssertEqual("A", String(results.tail))
         } else {
             XCTFail()
         }
 
-        if let results = CPTHelpers.run(parser: parserUnderTest, with: "Atail") {
+        if case .success(let results) = parserUnderTest.run(withInput: "Atail") {
             XCTAssertEqual("A", String(results.result))
             XCTAssertEqual("tail", String(results.tail))
         } else {
@@ -61,21 +61,21 @@ class CharacterParserTests: XCTestCase {
 
         let parserUnderTest = character(isInCharacterSet: .decimalDigits)
 
-        if let results = CPTHelpers.run(parser: parserUnderTest, with: "1") {
+        if case .success(let results) = parserUnderTest.run(withInput: "1") {
             XCTAssertEqual("1", String(results.result))
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
-        if let results = CPTHelpers.run(parser: parserUnderTest, with: "12") {
+        if case .success(let results) = parserUnderTest.run(withInput: "12") {
             XCTAssertEqual("1", String(results.result))
             XCTAssertEqual("2", String(results.tail))
         } else {
             XCTFail()
         }
 
-        if let results = CPTHelpers.run(parser: parserUnderTest, with: "1tail") {
+        if case .success(let results) = parserUnderTest.run(withInput: "1tail") {
             XCTAssertEqual("1", String(results.result))
             XCTAssertEqual("tail", String(results.tail))
         } else {
@@ -103,21 +103,21 @@ class CharacterParserTests: XCTestCase {
 
         let parserUnderTest = character(isEqualTo: "A")
 
-        if let results = CPTHelpers.run(parser: parserUnderTest, with: "A") {
+        if case .success(let results) = parserUnderTest.run(withInput: "A") {
             XCTAssertEqual("A", String(results.result))
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
-        if let results = CPTHelpers.run(parser: parserUnderTest, with: "AA") {
+        if case .success(let results) = parserUnderTest.run(withInput: "AA") {
             XCTAssertEqual("A", String(results.result))
             XCTAssertEqual("A", String(results.tail))
         } else {
             XCTFail()
         }
 
-        if let results = CPTHelpers.run(parser: parserUnderTest, with: "Atail") {
+        if case .success(let results) = parserUnderTest.run(withInput: "Atail") {
             XCTAssertEqual("A", String(results.result))
             XCTAssertEqual("tail", String(results.tail))
         } else {
@@ -145,28 +145,28 @@ class CharacterParserTests: XCTestCase {
 
         let parserUnderTest = character(isInString: "ABC")
 
-        if let results = CPTHelpers.run(parser: parserUnderTest, with: "A") {
+        if case .success(let results) = parserUnderTest.run(withInput: "A") {
             XCTAssertEqual("A", String(results.result))
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
-        if let results = CPTHelpers.run(parser: parserUnderTest, with: "B") {
+        if case .success(let results) = parserUnderTest.run(withInput: "B") {
             XCTAssertEqual("B", String(results.result))
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
-        if let results = CPTHelpers.run(parser: parserUnderTest, with: "AB") {
+        if case .success(let results) = parserUnderTest.run(withInput: "AB") {
             XCTAssertEqual("A", String(results.result))
             XCTAssertEqual("B", String(results.tail))
         } else {
             XCTFail()
         }
 
-        if let results = CPTHelpers.run(parser: parserUnderTest, with: "Atail") {
+        if case .success(let results) = parserUnderTest.run(withInput: "Atail") {
             XCTAssertEqual("A", String(results.result))
             XCTAssertEqual("tail", String(results.tail))
         } else {
@@ -196,14 +196,14 @@ class CharacterParserTests: XCTestCase {
 
         let parserUnderTest = anyCharacter
 
-        if let results = CPTHelpers.run(parser: parserUnderTest, with: "A") {
+        if case .success(let results) = parserUnderTest.run(withInput: "A") {
             XCTAssertEqual("A", String(results.result))
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
-        if let results = CPTHelpers.run(parser: parserUnderTest, with: "Atail") {
+        if case .success(let results) = parserUnderTest.run(withInput: "Atail") {
             XCTAssertEqual("A", String(results.result))
             XCTAssertEqual("tail", String(results.tail))
         } else {

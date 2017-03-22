@@ -12,15 +12,6 @@
 
 struct CPTHelpers {
 
-    static func run(parser: Parser<Character>, with input: String) -> (result: Character, tail: TokenStream)? {
-
-        if case .success(let result) = parser.run(withInput: input) {
-            return (result: result.result, tail: result.tail)
-        }
-
-        return nil
-    }
-
     static func runAndExpectInsufficiantCharacters(parser: Parser<Character>) -> Bool {
 
         if case .failure(let reason) = parser.run(withInput: "") {
