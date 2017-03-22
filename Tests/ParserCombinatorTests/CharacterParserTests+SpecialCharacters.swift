@@ -1,5 +1,5 @@
 //
-//  CHaracterParserTests+SpecialCharacters.swift
+//  CharacterParserTests+SpecialCharacters.swift
 //  ParserCombinator
 //
 //  Created by Liam on 21/03/2017.
