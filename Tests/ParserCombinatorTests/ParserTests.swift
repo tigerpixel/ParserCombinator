@@ -25,82 +25,170 @@ class ParserTests: XCTestCase {
             // Need to drop first element so tht the parser moves on.
             return .success(result: result, tail: stream.dropFirst())
         }
-
     }
 
-    // MARK: Run and resolve result to optional.
+    // MARK: Test methods which convert one type of parser to another.
 
-    func testRunAndResolveParserWithSuccessMatch() {
+    func testMapParser() {
 
-        let testParser = createTestParser()
+        // Boolean result of mapped to the strings 'true' and 'false'.
+        let parserUnderTest = createTestParser().map { $0 ? "true" : "false" }
 
-        let output = testParser.runAndResolve(withInput: "a")
-
-        XCTAssertEqual(true, output)
-    }
-
-    func testRunAndResolveParserWithSuccessMismatch() {
-
-        let testParser = createTestParser()
-
-        let output = testParser.runAndResolve(withInput: "b")
-
-        XCTAssertEqual(false, output)
-    }
-
-    func testRunAndResolveParserWithNoInputTokens() {
-
-        let testParser = createTestParser()
-
-        let output = testParser.runAndResolve(withInput: "")
-
-        XCTAssertEqual(nil, output)
-    }
-
-    // MARK: Run and manually resolve result.
-
-    func testRunParserWithSuccessMatch() {
-
-        let testParser = createTestParser()
-
-        let parseResult = testParser.run(withInput: "a")
-
-        guard case .success(let result, let tail) = parseResult else {
-            XCTFail("Expected success case received \(parseResult).")
-            return
+        if case .success(let results) = parserUnderTest.run(withInput: "aaa") {
+            XCTAssertEqual("true", results.result)
+            XCTAssertEqual("aa", String(results.tail))
+        } else {
+            XCTFail()
         }
 
-        XCTAssertEqual(true, result)
-        XCTAssertEqual("", String(tail))
-    }
-
-    func testRunParserWithSuccessMismatch() {
-
-        let testParser = createTestParser()
-
-        let parseResult = testParser.run(withInput: "b")
-
-        guard case .success(let result, let tail) = parseResult else {
-            XCTFail("Expected success case received \(parseResult).")
-            return
+        if case .success(let results) = parserUnderTest.run(withInput: "sss") {
+            XCTAssertEqual("false", results.result)
+            XCTAssertEqual("ss", String(results.tail))
+        } else {
+            XCTFail()
         }
 
-        XCTAssertEqual(false, result)
-        XCTAssertEqual("", String(tail))
+        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: parserUnderTest))
     }
 
-    func testRunParserWithNoInputTokens() {
+    func testFollowedByParser() {
 
-        let testParser = createTestParser()
+        let parserUnderTest = createTestParser().followed(by: createTestParser())
 
-        let parseResult = testParser.run(withInput: "")
-
-        guard case .failure(let reason) = parseResult else {
-            XCTFail("Expected failure case received \(parseResult).")
-            return
+        if case .success(let results) = parserUnderTest.run(withInput: "aa") {
+            XCTAssertEqual(true, results.result.0)
+            XCTAssertEqual(true, results.result.1)
+        } else {
+            XCTFail()
         }
 
-        XCTAssertEqual(ParseFailure.insufficiantTokens, reason)
+        if case .success(let results) = parserUnderTest.run(withInput: "ab") {
+            XCTAssertEqual(true, results.result.0)
+            XCTAssertEqual(false, results.result.1)
+        } else {
+            XCTFail()
+        }
+
+        if case .success(let results) = parserUnderTest.run(withInput: "ba") {
+            XCTAssertEqual(false, results.result.0)
+            XCTAssertEqual(true, results.result.1)
+        } else {
+            XCTFail()
+        }
+
+        if case .success(let results) = parserUnderTest.run(withInput: "bb") {
+            XCTAssertEqual(false, results.result.0)
+            XCTAssertEqual(false, results.result.1)
+        } else {
+            XCTFail()
+        }
+
+        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: parserUnderTest))
+        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: parserUnderTest, withTokens: "a"))
+    }
+
+    func testMakeOptionalParser() {
+
+        let parserUnderTest = createTestParser().optional
+
+        if case .success(let results) = parserUnderTest.run(withInput: "aaa") {
+            XCTAssertEqual(true, results.result)
+            XCTAssertEqual("aa", String(results.tail))
+        } else {
+            XCTFail()
+        }
+
+        if case .success(let results) = parserUnderTest.run(withInput: "a") {
+            XCTAssertEqual(true, results.result)
+            XCTAssertEqual("", String(results.tail))
+        } else {
+            XCTFail()
+        }
+
+        if case .success(let results) = parserUnderTest.run(withInput: "") {
+            XCTAssertEqual(nil, results.result)
+            XCTAssertEqual("", String(results.tail))
+        } else {
+            XCTFail()
+        }
+    }
+
+    func testOneOrManyMatchesParser() {
+
+        let parserUnderTest = createTestParser().oneOrMany
+
+        if case .success(let results) = parserUnderTest.run(withInput: "a") {
+            XCTAssertEqual([true], results.result)
+            XCTAssertEqual("", String(results.tail))
+        } else {
+            XCTFail()
+        }
+
+        if case .success(let results) = parserUnderTest.run(withInput: "abab") {
+            XCTAssertEqual([true, false, true, false], results.result)
+            XCTAssertEqual("", String(results.tail))
+        } else {
+            XCTFail()
+        }
+
+        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: parserUnderTest))
+    }
+
+    func testZeroOneOrManyMatchesParser() {
+
+        let parserUnderTest = createTestParser().zeroOneOrMany
+
+        if case .success(let results) = parserUnderTest.run(withInput: "a") {
+            XCTAssertEqual([true], results.result)
+            XCTAssertEqual("", String(results.tail))
+        } else {
+            XCTFail()
+        }
+
+        if case .success(let results) = parserUnderTest.run(withInput: "abab") {
+            XCTAssertEqual([true, false, true, false], results.result)
+            XCTAssertEqual("", String(results.tail))
+        } else {
+            XCTFail()
+        }
+
+        if case .success(let results) = parserUnderTest.run(withInput: "") {
+            XCTAssertEqual([], results.result)
+            XCTAssertEqual("", String(results.tail))
+        } else {
+            XCTFail()
+        }
+    }
+
+    func testRepeatsGivenNumberOfTimesParser() {
+
+        let parserUnderTest = createTestParser().repeats(times: 3)
+
+        // The following two tests look for both different inputs and behaviour over multiple runs. (ie do counts reset)
+        if case .success(let results) = parserUnderTest.run(withInput: "aba") {
+            XCTAssertEqual([true, false, true], results.result)
+            XCTAssertEqual("", String(results.tail))
+        } else {
+            XCTFail()
+        }
+
+        if case .success(let results) = parserUnderTest.run(withInput: "baa") {
+            XCTAssertEqual([false, true, true], results.result)
+            XCTAssertEqual("", String(results.tail))
+        } else {
+            XCTFail()
+        }
+
+        if case .success(let results) = parserUnderTest.run(withInput: "ababa") {
+            XCTAssertEqual([true, false, true], results.result)
+            XCTAssertEqual("ba", String(results.tail))
+        } else {
+            XCTFail()
+        }
+
+        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: parserUnderTest, withTokens: "ab"))
+        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: parserUnderTest, withTokens: "a"))
+        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: parserUnderTest))
     }
 
 }

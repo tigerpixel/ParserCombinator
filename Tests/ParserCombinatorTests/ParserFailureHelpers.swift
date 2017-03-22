@@ -12,16 +12,16 @@
 
 struct ParserFailureHelpers {
 
-    static func expectInsufficiantCharacters(parser: Parser<Character>) -> Bool {
+    static func expectInsufficiantCharacters<Output>(parser: Parser<Output>, withTokens tokens: String = "") -> Bool {
 
-        if case .failure(let reason) = parser.run(withInput: "") {
+        if case .failure(let reason) = parser.run(withInput: tokens) {
             return .insufficiantTokens == reason
         }
 
         return false
     }
 
-    static func expectUnexpectedToken(parser: Parser<Character>, with unexpectedToken: String)
+    static func expectUnexpectedToken<Output>(parser: Parser<Output>, with unexpectedToken: String)
         -> (token: TokenStream, tail: TokenStream)? {
 
         if

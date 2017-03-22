@@ -21,6 +21,27 @@ public enum ParseResult<Output> {
 }
 
 /**
+ Map the success result output from one type to another.
+ 
+ - parameter transform: The transform function for the contained type.
+ 
+ - returns: A mapped version of the parser result.
+ */
+
+public extension ParseResult {
+
+    func map<MappedOutput>(_ transform: @escaping (Output) -> MappedOutput) -> ParseResult<MappedOutput> {
+
+        switch self {
+        case .success(let result, let remainder):
+            return .success(result: transform(result), tail: remainder)
+        case .failure(details: let details):
+            return .failure(details: details)
+        }
+    }
+}
+
+/**
  A description of a failed parsing operation.
  
  - insufficiantTokens: There are not enough character tokens remaining to assess the parsing operation.
