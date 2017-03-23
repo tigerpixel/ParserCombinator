@@ -86,28 +86,28 @@ public func character(isInString string: String) -> Parser<Character> {
 public let anyCharacter = character { _ in true}
 
 /// All characters found in CharacterSet.letters will pass, all others will fail.
-public let letter = character(isInCharacterSet: CharacterSet.letters)
+public let letter = character(isInCharacterSet: .letters)
 
 /// All characters found in CharacterSet.lowercaseLetters will pass, all others will fail.
-public let lowercaseLetter = character(isInCharacterSet: CharacterSet.lowercaseLetters)
+public let lowercaseLetter = character(isInCharacterSet: .lowercaseLetters)
 
 /// All characters found in CharacterSet.uppercaseLetters will pass, all others will fail.
-public let uppercaseLetter = character(isInCharacterSet: CharacterSet.uppercaseLetters)
+public let uppercaseLetter = character(isInCharacterSet: .uppercaseLetters)
 
 /// All characters found in CharacterSet.alphanumerics will pass, all others will fail.
-public let alphanumeric = character(isInCharacterSet: CharacterSet.alphanumerics)
+public let alphanumeric = character(isInCharacterSet: .alphanumerics)
 
 /// All characters found in CharacterSet.decimalDigits will pass, all others will fail.
-public let digit = character(isInCharacterSet: CharacterSet.decimalDigits)
+public let digit = character(isInCharacterSet: .decimalDigits)
 
 /// All characters found in CharacterSet.whitespaces will pass, all others will fail.
-public let whitespace = character(isInCharacterSet:CharacterSet.whitespaces)
+public let whitespace = character(isInCharacterSet: .whitespaces)
 
 /// All characters found in CharacterSet.newlines will pass, all others will fail.
-public let newline = character(isInCharacterSet:CharacterSet.newlines)
+public let newline = character(isInCharacterSet: .newlines)
 
 /// All characters found in CharacterSet.whitespacesAndNewlines will pass, all others will fail.
-public let whitespaceOrNewline = character(isInCharacterSet:CharacterSet.whitespacesAndNewlines)
+public let whitespaceOrNewline = character(isInCharacterSet: .whitespacesAndNewlines)
 
 // MARK: Pre-made pasers using the character parser function for single everyday characters.
 
