@@ -16,14 +16,14 @@ class StringParserTests: XCTestCase {
         let parserUnderTest = uppercaseString
 
         if case .success(let results) = parserUnderTest.run(withInput: "ABC") {
-            XCTAssertEqual("ABC", String(results.result))
+            XCTAssertEqual("ABC", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "ABCd") {
-            XCTAssertEqual("ABC", String(results.result))
+            XCTAssertEqual("ABC", results.result)
             XCTAssertEqual("d", String(results.tail))
         } else {
             XCTFail()
@@ -44,14 +44,14 @@ class StringParserTests: XCTestCase {
         let parserUnderTest = lowercaseString
 
         if case .success(let results) = parserUnderTest.run(withInput: "abc") {
-            XCTAssertEqual("abc", String(results.result))
+            XCTAssertEqual("abc", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "abcD") {
-            XCTAssertEqual("abc", String(results.result))
+            XCTAssertEqual("abc", results.result)
             XCTAssertEqual("D", String(results.tail))
         } else {
             XCTFail()
@@ -72,14 +72,14 @@ class StringParserTests: XCTestCase {
         let parserUnderTest = alphanumericString
 
         if case .success(let results) = parserUnderTest.run(withInput: "aB3") {
-            XCTAssertEqual("aB3", String(results.result))
+            XCTAssertEqual("aB3", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "aB3£") {
-            XCTAssertEqual("aB3", String(results.result))
+            XCTAssertEqual("aB3", results.result)
             XCTAssertEqual("£", String(results.tail))
         } else {
             XCTFail()
@@ -100,14 +100,14 @@ class StringParserTests: XCTestCase {
         let parserUnderTest = string(withCharactersInSet: .decimalDigits)
 
         if case .success(let results) = parserUnderTest.run(withInput: "123") {
-            XCTAssertEqual("123", String(results.result))
+            XCTAssertEqual("123", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "123d") {
-            XCTAssertEqual("123", String(results.result))
+            XCTAssertEqual("123", results.result)
             XCTAssertEqual("d", String(results.tail))
         } else {
             XCTFail()

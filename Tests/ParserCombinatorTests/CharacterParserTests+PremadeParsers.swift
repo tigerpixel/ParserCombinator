@@ -18,28 +18,28 @@ extension CharacterParserTests {
         let parserUnderTest = letter
 
         if case .success(let results) = parserUnderTest.run(withInput: "A") {
-            XCTAssertEqual("A", String(results.result))
+            XCTAssertEqual("A", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "b") {
-            XCTAssertEqual("b", String(results.result))
+            XCTAssertEqual("b", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "AB") {
-            XCTAssertEqual("A", String(results.result))
+            XCTAssertEqual("A", results.result)
             XCTAssertEqual("B", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "A1234") {
-            XCTAssertEqual("A", String(results.result))
+            XCTAssertEqual("A", results.result)
             XCTAssertEqual("1234", String(results.tail))
         } else {
             XCTFail()
@@ -67,21 +67,21 @@ extension CharacterParserTests {
         let parserUnderTest = lowercaseLetter
 
         if case .success(let results) = parserUnderTest.run(withInput: "a") {
-            XCTAssertEqual("a", String(results.result))
+            XCTAssertEqual("a", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "ab") {
-            XCTAssertEqual("a", String(results.result))
+            XCTAssertEqual("a", results.result)
             XCTAssertEqual("b", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "aBCD") {
-            XCTAssertEqual("a", String(results.result))
+            XCTAssertEqual("a", results.result)
             XCTAssertEqual("BCD", String(results.tail))
         } else {
             XCTFail()
@@ -109,21 +109,21 @@ extension CharacterParserTests {
         let parserUnderTest = uppercaseLetter
 
         if case .success(let results) = parserUnderTest.run(withInput: "A") {
-            XCTAssertEqual("A", String(results.result))
+            XCTAssertEqual("A", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "AB") {
-            XCTAssertEqual("A", String(results.result))
+            XCTAssertEqual("A", results.result)
             XCTAssertEqual("B", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "Abcd") {
-            XCTAssertEqual("A", String(results.result))
+            XCTAssertEqual("A", results.result)
             XCTAssertEqual("bcd", String(results.tail))
         } else {
             XCTFail()
@@ -151,28 +151,28 @@ extension CharacterParserTests {
         let parserUnderTest = alphanumeric
 
         if case .success(let results) = parserUnderTest.run(withInput: "A") {
-            XCTAssertEqual("A", String(results.result))
+            XCTAssertEqual("A", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "1") {
-            XCTAssertEqual("1", String(results.result))
+            XCTAssertEqual("1", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "A1") {
-            XCTAssertEqual("A", String(results.result))
+            XCTAssertEqual("A", results.result)
             XCTAssertEqual("1", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "A#$%") {
-            XCTAssertEqual("A", String(results.result))
+            XCTAssertEqual("A", results.result)
             XCTAssertEqual("#$%", String(results.tail))
         } else {
             XCTFail()
@@ -200,14 +200,14 @@ extension CharacterParserTests {
         let parserUnderTest = digit
 
         if case .success(let results) = parserUnderTest.run(withInput: "1") {
-            XCTAssertEqual("1", String(results.result))
+            XCTAssertEqual("1", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "1#$%") {
-            XCTAssertEqual("1", String(results.result))
+            XCTAssertEqual("1", results.result)
             XCTAssertEqual("#$%", String(results.tail))
         } else {
             XCTFail()
@@ -236,14 +236,14 @@ extension CharacterParserTests {
         let parserUnderTest = whitespace
 
         if case .success(let results) = parserUnderTest.run(withInput: " ") {
-            XCTAssertEqual(" ", String(results.result))
+            XCTAssertEqual(" ", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: " #$%") {
-            XCTAssertEqual(" ", String(results.result))
+            XCTAssertEqual(" ", results.result)
             XCTAssertEqual("#$%", String(results.tail))
         } else {
             XCTFail()
@@ -270,14 +270,14 @@ extension CharacterParserTests {
         let parserUnderTest = newline
 
         if case .success(let results) = parserUnderTest.run(withInput: "\n") {
-            XCTAssertEqual("\n", String(results.result))
+            XCTAssertEqual("\n", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "\n#$%") {
-            XCTAssertEqual("\n", String(results.result))
+            XCTAssertEqual("\n", results.result)
             XCTAssertEqual("#$%", String(results.tail))
         } else {
             XCTFail()
@@ -305,21 +305,21 @@ extension CharacterParserTests {
         let parserUnderTest = whitespaceOrNewline
 
         if case .success(let results) = parserUnderTest.run(withInput: " ") {
-            XCTAssertEqual(" ", String(results.result))
+            XCTAssertEqual(" ", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "\n") {
-            XCTAssertEqual("\n", String(results.result))
+            XCTAssertEqual("\n", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "\n#$%") {
-            XCTAssertEqual("\n", String(results.result))
+            XCTAssertEqual("\n", results.result)
             XCTAssertEqual("#$%", String(results.tail))
         } else {
             XCTFail()

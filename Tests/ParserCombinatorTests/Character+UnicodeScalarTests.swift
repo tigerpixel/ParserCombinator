@@ -9,10 +9,6 @@
 import XCTest
 @testable import ParserCombinator
 
-class Character_UnicodeScalarTests: XCTestCase {
-
-    func testA() {
-
-    }
+class CharacterUnicodeScalarTests: XCTestCase {
 
 }

@@ -18,21 +18,21 @@ class CharacterParserTests: XCTestCase {
         let parserUnderTest = character { $0 == "A" }
 
         if case .success(let results) = parserUnderTest.run(withInput: "A") {
-            XCTAssertEqual("A", String(results.result))
+            XCTAssertEqual("A", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "AA") {
-            XCTAssertEqual("A", String(results.result))
+            XCTAssertEqual("A", results.result)
             XCTAssertEqual("A", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "Atail") {
-            XCTAssertEqual("A", String(results.result))
+            XCTAssertEqual("A", results.result)
             XCTAssertEqual("tail", String(results.tail))
         } else {
             XCTFail()
@@ -62,21 +62,21 @@ class CharacterParserTests: XCTestCase {
         let parserUnderTest = character(isInCharacterSet: .decimalDigits)
 
         if case .success(let results) = parserUnderTest.run(withInput: "1") {
-            XCTAssertEqual("1", String(results.result))
+            XCTAssertEqual("1", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "12") {
-            XCTAssertEqual("1", String(results.result))
+            XCTAssertEqual("1", results.result)
             XCTAssertEqual("2", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "1tail") {
-            XCTAssertEqual("1", String(results.result))
+            XCTAssertEqual("1", results.result)
             XCTAssertEqual("tail", String(results.tail))
         } else {
             XCTFail()
@@ -104,21 +104,21 @@ class CharacterParserTests: XCTestCase {
         let parserUnderTest = character(isEqualTo: "A")
 
         if case .success(let results) = parserUnderTest.run(withInput: "A") {
-            XCTAssertEqual("A", String(results.result))
+            XCTAssertEqual("A", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "AA") {
-            XCTAssertEqual("A", String(results.result))
+            XCTAssertEqual("A", results.result)
             XCTAssertEqual("A", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "Atail") {
-            XCTAssertEqual("A", String(results.result))
+            XCTAssertEqual("A", results.result)
             XCTAssertEqual("tail", String(results.tail))
         } else {
             XCTFail()
@@ -146,28 +146,28 @@ class CharacterParserTests: XCTestCase {
         let parserUnderTest = character(isInString: "ABC")
 
         if case .success(let results) = parserUnderTest.run(withInput: "A") {
-            XCTAssertEqual("A", String(results.result))
+            XCTAssertEqual("A", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "B") {
-            XCTAssertEqual("B", String(results.result))
+            XCTAssertEqual("B", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "AB") {
-            XCTAssertEqual("A", String(results.result))
+            XCTAssertEqual("A", results.result)
             XCTAssertEqual("B", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "Atail") {
-            XCTAssertEqual("A", String(results.result))
+            XCTAssertEqual("A", results.result)
             XCTAssertEqual("tail", String(results.tail))
         } else {
             XCTFail()
@@ -197,14 +197,14 @@ class CharacterParserTests: XCTestCase {
         let parserUnderTest = anyCharacter
 
         if case .success(let results) = parserUnderTest.run(withInput: "A") {
-            XCTAssertEqual("A", String(results.result))
+            XCTAssertEqual("A", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "Atail") {
-            XCTAssertEqual("A", String(results.result))
+            XCTAssertEqual("A", results.result)
             XCTAssertEqual("tail", String(results.tail))
         } else {
             XCTFail()

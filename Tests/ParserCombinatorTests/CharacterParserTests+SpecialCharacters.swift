@@ -16,21 +16,21 @@ extension CharacterParserTests {
     func testCharacterIsComma() {
 
         if case .success(let results) = comma.run(withInput: ",") {
-            XCTAssertEqual(",", String(results.result))
+            XCTAssertEqual(",", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = comma.run(withInput: ",,") {
-            XCTAssertEqual(",", String(results.result))
+            XCTAssertEqual(",", results.result)
             XCTAssertEqual(",", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = comma.run(withInput: ",has a comma") {
-            XCTAssertEqual(",", String(results.result))
+            XCTAssertEqual(",", results.result)
             XCTAssertEqual("has a comma", String(results.tail))
         } else {
             XCTFail()
@@ -57,21 +57,21 @@ extension CharacterParserTests {
     func testCharacterIsFullstop() {
 
         if case .success(let results) = fullstop.run(withInput: ".") {
-            XCTAssertEqual(".", String(results.result))
+            XCTAssertEqual(".", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = fullstop.run(withInput: "..") {
-            XCTAssertEqual(".", String(results.result))
+            XCTAssertEqual(".", results.result)
             XCTAssertEqual(".", String(results.tail))
         } else {
             XCTFail()
         }
 
         if case .success(let results) = fullstop.run(withInput: ".has a full stop") {
-            XCTAssertEqual(".", String(results.result))
+            XCTAssertEqual(".", results.result)
             XCTAssertEqual("has a full stop", String(results.tail))
         } else {
             XCTFail()
