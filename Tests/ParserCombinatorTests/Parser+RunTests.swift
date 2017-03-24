@@ -9,7 +9,7 @@
 import XCTest
 @testable import ParserCombinator
 
-class ParserRunTests: XCTestCase {
+class ParserPlusRunTests: XCTestCase {
 
     // MARK: A simple test parser. Checks for a value of "a" and moves on one character.
 
