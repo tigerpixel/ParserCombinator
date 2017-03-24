@@ -29,14 +29,14 @@ class StringParserTests: XCTestCase {
             XCTFail()
         }
 
-        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: fullstop, with: "aBCD") {
-            XCTAssertEqual("a", String(unexpectedToken.token))
-            XCTAssertEqual("BCD", String(unexpectedToken.tail))
+        if let unexpected = ParserTestHelper.findUnexpectedToken(running: fullstop, with: "aBCD") {
+            XCTAssertEqual("a", String(unexpected.token))
+            XCTAssertEqual("BCD", String(unexpected.tail))
         } else {
             XCTFail()
         }
 
-        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: parserUnderTest))
+        XCTAssert(ParserTestHelper.hasInsufficiantTokens(parser: parserUnderTest))
     }
 
     func testLowercaseString() {
@@ -57,14 +57,14 @@ class StringParserTests: XCTestCase {
             XCTFail()
         }
 
-        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: fullstop, with: "Abcd") {
-            XCTAssertEqual("A", String(unexpectedToken.token))
-            XCTAssertEqual("bcd", String(unexpectedToken.tail))
+        if let unexpected = ParserTestHelper.findUnexpectedToken(running: fullstop, with: "Abcd") {
+            XCTAssertEqual("A", String(unexpected.token))
+            XCTAssertEqual("bcd", String(unexpected.tail))
         } else {
             XCTFail()
         }
 
-        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: parserUnderTest))
+        XCTAssert(ParserTestHelper.hasInsufficiantTokens(parser: parserUnderTest))
     }
 
     func testAlphanumericString() {
@@ -85,14 +85,14 @@ class StringParserTests: XCTestCase {
             XCTFail()
         }
 
-        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: fullstop, with: "£Ab3") {
-            XCTAssertEqual("£", String(unexpectedToken.token))
-            XCTAssertEqual("Ab3", String(unexpectedToken.tail))
+        if let unexpected = ParserTestHelper.findUnexpectedToken(running: fullstop, with: "£Ab3") {
+            XCTAssertEqual("£", String(unexpected.token))
+            XCTAssertEqual("Ab3", String(unexpected.tail))
         } else {
             XCTFail()
         }
 
-        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: parserUnderTest))
+        XCTAssert(ParserTestHelper.hasInsufficiantTokens(parser: parserUnderTest))
     }
 
     func testStringWithCharactersInSet() {
@@ -113,14 +113,14 @@ class StringParserTests: XCTestCase {
             XCTFail()
         }
 
-        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: fullstop, with: "a123") {
-            XCTAssertEqual("a", String(unexpectedToken.token))
-            XCTAssertEqual("123", String(unexpectedToken.tail))
+        if let unexpected = ParserTestHelper.findUnexpectedToken(running: fullstop, with: "a123") {
+            XCTAssertEqual("a", String(unexpected.token))
+            XCTAssertEqual("123", String(unexpected.tail))
         } else {
             XCTFail()
         }
 
-        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: parserUnderTest))
+        XCTAssert(ParserTestHelper.hasInsufficiantTokens(parser: parserUnderTest))
     }
 
 }

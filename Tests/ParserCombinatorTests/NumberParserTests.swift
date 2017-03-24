@@ -43,14 +43,14 @@ class NumberParserTests: XCTestCase {
             XCTFail()
         }
 
-        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: fullstop, with: "aBCD") {
-            XCTAssertEqual("a", String(unexpectedToken.token))
-            XCTAssertEqual("BCD", String(unexpectedToken.tail))
+        if let unexpected = ParserTestHelper.findUnexpectedToken(running: fullstop, with: "aBCD") {
+            XCTAssertEqual("a", String(unexpected.token))
+            XCTAssertEqual("BCD", String(unexpected.tail))
         } else {
             XCTFail()
         }
 
-        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: parserUnderTest))
+        XCTAssert(ParserTestHelper.hasInsufficiantTokens(parser: parserUnderTest))
     }
 
 }

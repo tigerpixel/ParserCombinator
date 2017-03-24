@@ -11,28 +11,11 @@ import XCTest
 
 class ParserPlusRunTests: XCTestCase {
 
-    // MARK: A simple test parser. Checks for a value of "a" and moves on one character.
-
-    private func createTestParser() -> Parser<Bool> {
-
-        return Parser { stream in
-
-            guard let character = stream.first else {
-                return .failure(details: .insufficiantTokens)
-            }
-
-            let result: Bool = (character == "a")
-            // Need to drop first element so tht the parser moves on.
-            return .success(result: result, tail: stream.dropFirst())
-        }
-
-    }
-
     // MARK: Run and resolve result to optional.
 
     func testRunAndResolveParserWithSuccessMatch() {
 
-        let testParser = createTestParser()
+        let testParser = ParserTestHelper.testAParser()
 
         let output = testParser.runAndResolve(withInput: "a")
 
@@ -41,7 +24,7 @@ class ParserPlusRunTests: XCTestCase {
 
     func testRunAndResolveParserWithSuccessMismatch() {
 
-        let testParser = createTestParser()
+        let testParser = ParserTestHelper.testAParser()
 
         let output = testParser.runAndResolve(withInput: "b")
 
@@ -50,7 +33,7 @@ class ParserPlusRunTests: XCTestCase {
 
     func testRunAndResolveParserWithNoInputTokens() {
 
-        let testParser = createTestParser()
+        let testParser = ParserTestHelper.testAParser()
 
         let output = testParser.runAndResolve(withInput: "")
 
@@ -61,7 +44,7 @@ class ParserPlusRunTests: XCTestCase {
 
     func testRunParserWithSuccessMatch() {
 
-        let testParser = createTestParser()
+        let testParser = ParserTestHelper.testAParser()
 
         let parseResult = testParser.run(withInput: "a")
 
@@ -76,7 +59,7 @@ class ParserPlusRunTests: XCTestCase {
 
     func testRunParserWithSuccessMismatch() {
 
-        let testParser = createTestParser()
+        let testParser = ParserTestHelper.testAParser()
 
         let parseResult = testParser.run(withInput: "b")
 
@@ -91,7 +74,7 @@ class ParserPlusRunTests: XCTestCase {
 
     func testRunParserWithNoInputTokens() {
 
-        let testParser = createTestParser()
+        let testParser = ParserTestHelper.testAParser()
 
         let parseResult = testParser.run(withInput: "")
 

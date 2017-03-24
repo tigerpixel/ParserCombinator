@@ -36,21 +36,21 @@ extension CharacterParserTests {
             XCTFail()
         }
 
-        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: comma, with: "not a comma") {
-            XCTAssertEqual("n", String(unexpectedToken.token))
-            XCTAssertEqual("ot a comma", String(unexpectedToken.tail))
+        if let unexpected = ParserTestHelper.findUnexpectedToken(running: comma, with: "not a comma") {
+            XCTAssertEqual("n", String(unexpected.token))
+            XCTAssertEqual("ot a comma", String(unexpected.tail))
         } else {
             XCTFail()
         }
 
-        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: comma, with: "1,") {
-            XCTAssertEqual("1", String(unexpectedToken.token))
-            XCTAssertEqual(",", String(unexpectedToken.tail))
+        if let unexpected = ParserTestHelper.findUnexpectedToken(running: comma, with: "1,") {
+            XCTAssertEqual("1", String(unexpected.token))
+            XCTAssertEqual(",", String(unexpected.tail))
         } else {
             XCTFail()
         }
 
-        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: comma))
+        XCTAssert(ParserTestHelper.hasInsufficiantTokens(parser: comma))
 
     }
 
@@ -77,21 +77,21 @@ extension CharacterParserTests {
             XCTFail()
         }
 
-        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: fullstop, with: "not a full stop") {
-            XCTAssertEqual("n", String(unexpectedToken.token))
-            XCTAssertEqual("ot a full stop", String(unexpectedToken.tail))
+        if let unexpected = ParserTestHelper.findUnexpectedToken(running: fullstop, with: "not a full stop") {
+            XCTAssertEqual("n", String(unexpected.token))
+            XCTAssertEqual("ot a full stop", String(unexpected.tail))
         } else {
             XCTFail()
         }
 
-        if let unexpectedToken = ParserFailureHelpers.expectUnexpectedToken(parser: fullstop, with: "1.") {
-            XCTAssertEqual("1", String(unexpectedToken.token))
-            XCTAssertEqual(".", String(unexpectedToken.tail))
+        if let unexpected = ParserTestHelper.findUnexpectedToken(running: fullstop, with: "1.") {
+            XCTAssertEqual("1", String(unexpected.token))
+            XCTAssertEqual(".", String(unexpected.tail))
         } else {
             XCTFail()
         }
 
-        XCTAssert(ParserFailureHelpers.expectInsufficiantCharacters(parser: fullstop))
+        XCTAssert(ParserTestHelper.hasInsufficiantTokens(parser: fullstop))
     }
 
 }
