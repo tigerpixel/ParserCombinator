@@ -15,7 +15,7 @@ class ParserPlusRunTests: XCTestCase {
 
     func testRunAndResolveParserWithSuccessMatch() {
 
-        let testParser = ParserTestHelper.testAParser()
+        let testParser = ParserTestHelper.aParser()
 
         let output = testParser.runAndResolve(withInput: "a")
 
@@ -24,7 +24,7 @@ class ParserPlusRunTests: XCTestCase {
 
     func testRunAndResolveParserWithSuccessMismatch() {
 
-        let testParser = ParserTestHelper.testAParser()
+        let testParser = ParserTestHelper.aParser()
 
         let output = testParser.runAndResolve(withInput: "b")
 
@@ -33,7 +33,7 @@ class ParserPlusRunTests: XCTestCase {
 
     func testRunAndResolveParserWithNoInputTokens() {
 
-        let testParser = ParserTestHelper.testAParser()
+        let testParser = ParserTestHelper.aParser()
 
         let output = testParser.runAndResolve(withInput: "")
 
@@ -44,7 +44,7 @@ class ParserPlusRunTests: XCTestCase {
 
     func testRunParserWithSuccessMatch() {
 
-        let testParser = ParserTestHelper.testAParser()
+        let testParser = ParserTestHelper.aParser()
 
         let parseResult = testParser.run(withInput: "a")
 
@@ -59,7 +59,7 @@ class ParserPlusRunTests: XCTestCase {
 
     func testRunParserWithSuccessMismatch() {
 
-        let testParser = ParserTestHelper.testAParser()
+        let testParser = ParserTestHelper.aParser()
 
         let parseResult = testParser.run(withInput: "b")
 
@@ -74,7 +74,7 @@ class ParserPlusRunTests: XCTestCase {
 
     func testRunParserWithNoInputTokens() {
 
-        let testParser = ParserTestHelper.testAParser()
+        let testParser = ParserTestHelper.aParser()
 
         let parseResult = testParser.run(withInput: "")
 

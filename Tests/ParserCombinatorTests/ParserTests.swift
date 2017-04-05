@@ -16,7 +16,7 @@ class ParserTests: XCTestCase {
     func testMapParser() {
 
         // Boolean result of mapped to the strings 'true' and 'false'.
-        let parserUnderTest = ParserTestHelper.testAParser().map { $0 ? "true" : "false" }
+        let parserUnderTest = ParserTestHelper.aParser().map { $0 ? "true" : "false" }
 
         if case .success(let results) = parserUnderTest.run(withInput: "aaa") {
             XCTAssertEqual("true", results.result)

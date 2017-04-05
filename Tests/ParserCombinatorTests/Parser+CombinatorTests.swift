@@ -13,7 +13,7 @@ class ParserPlusCombinatorTests: XCTestCase {
 
     func testFollowedByParser() {
 
-        let parserUnderTest = ParserTestHelper.testAParser().followed(by: ParserTestHelper.testAParser())
+        let parserUnderTest = ParserTestHelper.aParser().followed(by: ParserTestHelper.aParser())
 
         if case .success(let results) = parserUnderTest.run(withInput: "aa") {
             XCTAssertEqual(true, results.result.0)
@@ -49,7 +49,7 @@ class ParserPlusCombinatorTests: XCTestCase {
 
     func testMakeOptionalParser() {
 
-        let parserUnderTest = ParserTestHelper.testAParser().optional
+        let parserUnderTest = ParserTestHelper.aParser().optional
 
         if case .success(let results) = parserUnderTest.run(withInput: "aaa") {
             XCTAssertEqual(true, results.result)
@@ -75,7 +75,7 @@ class ParserPlusCombinatorTests: XCTestCase {
 
     func testOneOrManyMatchesParser() {
 
-        let parserUnderTest = ParserTestHelper.testAParser().oneOrMany
+        let parserUnderTest = ParserTestHelper.aParser().oneOrMany
 
         if case .success(let results) = parserUnderTest.run(withInput: "a") {
             XCTAssertEqual([true], results.result)
@@ -96,7 +96,7 @@ class ParserPlusCombinatorTests: XCTestCase {
 
     func testZeroOneOrManyMatchesParser() {
 
-        let parserUnderTest = ParserTestHelper.testAParser().zeroOneOrMany
+        let parserUnderTest = ParserTestHelper.aParser().zeroOneOrMany
 
         if case .success(let results) = parserUnderTest.run(withInput: "a") {
             XCTAssertEqual([true], results.result)
@@ -122,7 +122,7 @@ class ParserPlusCombinatorTests: XCTestCase {
 
     func testRepeatsGivenNumberOfTimesParser() {
 
-        let parserUnderTest = ParserTestHelper.testAParser().repeats(times: 3)
+        let parserUnderTest = ParserTestHelper.aParser().repeats(times: 3)
 
         // The following two tests look for both different inputs and behaviour over multiple runs. (ie do counts reset)
         if case .success(let results) = parserUnderTest.run(withInput: "aba") {

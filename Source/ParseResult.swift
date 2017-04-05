@@ -21,7 +21,7 @@ public enum ParseResult<Output> {
 }
 
 /**
- Map the success result output from one type to another.
+ Map the success result output from one type to another. Adding map ensures it is a functor.
  
  - parameter transform: The transform function for the contained type.
  
@@ -39,6 +39,7 @@ public extension ParseResult {
             return .failure(details: details)
         }
     }
+
 }
 
 /**
@@ -58,7 +59,7 @@ public enum ParseFailure: Equatable {
 
 /**
  Equality
- 
+
  The failure should be for the same reason, if it is custom then the messages must match.
  */
 
@@ -74,5 +75,4 @@ public func == (left: ParseFailure, right: ParseFailure) -> Bool {
     default:
         return false
     }
-
 }

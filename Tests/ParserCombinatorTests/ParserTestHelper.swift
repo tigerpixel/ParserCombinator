@@ -12,9 +12,12 @@
 
 struct ParserTestHelper {
 
-    // MARK: A simple test parser. Checks for a value of "a" and moves on one character.
+    // MARK: A set of simple test parsers.
 
-    static func testAParser() -> Parser<Bool> {
+    /* Checks for a value of "a" and moves on one character (token).
+    "a" resolves Bool true, anything else that is a token resolves Bool false. No tokens fails.*/
+
+    static func aParser() -> Parser<Bool> {
 
         return Parser { stream in
 
@@ -27,6 +30,48 @@ struct ParserTestHelper {
             return .success(result: result, tail: stream.dropFirst())
         }
     }
+
+    /* Checks for a value of the given character and moves on one character (token).
+     "a" resolves "a", anything else fails.*/
+
+    static func characterOrFailureParser(with character: Character) -> Parser<Character> {
+
+        return Parser { stream in
+
+            guard let streamToken = stream.first else {
+                return .failure(details: .insufficiantTokens)
+            }
+
+            guard character == streamToken else {
+                let token = streamToken.tokenized()
+                let tail = stream.dropFirst()
+                return .failure(details: .unexpectedToken(token: token, tail: tail))
+            }
+            // Need to drop first element so tht the parser moves on.
+            return .success(result: character, tail: stream.dropFirst())
+        }
+    }
+
+    /* Checks for a value of the given character and moves on one character (token).
+     "a" resolves "a", anything else fails.*/
+
+    static func optionalCharacterParser(with character: Character) -> Parser<Character?> {
+
+        return Parser { stream in
+
+            guard let streamToken = stream.first else {
+                return .failure(details: .insufficiantTokens)
+            }
+
+            guard character == streamToken else {
+                return .success(result: nil, tail: stream)
+            }
+            // Need to drop first element so tht the parser moves on.
+            return .success(result: character, tail: stream.dropFirst())
+        }
+    }
+
+    // MARK: A set of functions to simplify the assessment of a particular result.
 
     static func hasInsufficiantTokens<Output>(parser: Parser<Output>, with tokens: String = "") -> Bool {
 
