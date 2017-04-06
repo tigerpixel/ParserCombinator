@@ -12,8 +12,8 @@
  The type is regularly used and so a typealias is required.
  
  In parser terms each character is a token.
- 
  */
+
 public typealias TokenStream = String.CharacterView
 
 extension Character {

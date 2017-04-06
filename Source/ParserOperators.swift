@@ -11,9 +11,14 @@
 /**
  Sequential Application Operator (Apply).
  
- Combine multiple parsers so that the function within one is applied to the parameter given within the other parser. The resulting parser is returned.
+ Combine multiple parsers. 
+ The function within one is applied to the parameter given within the other parser.
+ The resulting parser is returned.
  
- Discussion: This method is a core concept within the parser conbinator. The first parmeter of this function contains a parser which maps from one type to another. This function is applied to the secondary parameter and the result is returned. Adding this operator means that the parser can be classified as an applicative functor.
+ Discussion: This method is a core concept within the parser conbinator. 
+ The first parmeter of this function contains a parser which maps from one type to another. 
+ This function is applied to the secondary parameter and the result is returned. 
+ Adding this operator means that the parser can be classified as an applicative functor.
  
  - parameter left: A parser which contains a transform function from one type to another.
  
@@ -35,9 +40,12 @@ public func <*> <T, U>(left: Parser<(T) -> U>, right: Parser<T>) ->  Parser<U> {
 /**
  Optional Sequential Application Operator.
  
- Combine multiple parsers so that the function within one is applied to the parameter given within the other parser. The resulting parser is returned. 
+ Combine multiple parsers. 
+ The function within one is applied to the parameter given within the other parser.
+ The resulting parser is returned.
  
- Discussion: In the case that an optional nil is sent to the second parameter then this will be mapped to a result.
+ Discussion: In the case that an optional nil is sent to the second parameter, 
+ this will be mapped to a result.
  
  - parameter left: A parser which contains a transform function from one type to another.
  
@@ -60,7 +68,10 @@ public func <?> <T, U>(left: Parser<(T?) -> U>, right: Parser<T?>) ->  Parser<U>
 /**
  Map Operator
  
- Apply a mapping function to the parser. Creating a parser of a different type. Reverses the syntax of applying a map using a function. The map transform is first, then the value to be mapped.
+ Apply a mapping function to the parser. 
+ Creating a parser of a different type. 
+ Reverses the syntax of applying a map using a function. 
+ The map transform is first, then the value to be mapped.
  
  - parameter left: A parser which contains a transform function from one type to another.
  
@@ -83,13 +94,15 @@ public func <^> <T, U>(left: @escaping (T) -> U, right: Parser<T>) ->  Parser<U>
 /**
  Or Operator
  
- Combine two parsers so that when paring occurs, if the first fails the second will be run. Only if the second then fails will an error by returned. The result contained within the first parser to succeed will be returned where possible.
+ When parsing occurs, if the first fails the second will be run.
+ Only if the second also fails will an error by returned.
+ The result contained within the first parser to succeed will be returned where possible.
  
  - parameter left: The first parser to be run which may fail.
  
  - parameter right: The parser which will run if the first parser fails.
  
- - returns: The resulting parser which will run one arguement and then anothe rin an 'or' fashion.
+ - returns: The resulting parser which will run one arguement and then another in an 'or' fashion.
  */
 
 precedencegroup Or {
@@ -116,13 +129,19 @@ public func <|> <T>(left: Parser<T>, right: Parser<T>) ->  Parser<T> {
 /**
  Check and Discard First Operator
  
- Parse both left and right operands and check for a success. If there is success on both parsers, discard the result given by the first operator. Return only the result of the second operand.
+ Parse both left and right operands and check for a success. 
+ If there is success on both parsers, discard the result given by the first operator. 
+ Return only the result of the second operand.
  
- - parameter left: A parser which will be run and must succeed for the combined parser to succeed by the result of which will not be returned.
+ - parameter left: A parser which will be run and must succeed for the combined parser to succeed. 
+ The result will not be returned.
  
- - parameter right: A parser which will be run and must succeed. It will provide the result for the combined parser.
+ - parameter right: A parser which will be run and must succeed. 
+ It will provide the result for the combined parser.
  
- - returns: A Parser which will require both parser to succeed but will only return the result of the second. The result of the first parser to fail will be returned in the event of a failure.
+ - returns: A Parser which will require both parsers to succeed. 
+ It will only return the result of the second.
+ The result of the first parser to fail will be returned in the event of a failure.
  */
 
 precedencegroup DiscardFirst {
@@ -139,13 +158,19 @@ public func *> <T, U>(left: Parser<T>, right: Parser<U>) ->  Parser<U> {
 /**
  Check and Discard Second Operator
  
- Parse both left and right operands and check for a success. If there is success on both parsers, discard the result given by the second operator. Return only the result of the first operand.
+ Parse both left and right operands and check for a success. 
+ If there is success on both parsers, discard the result given by the second operator. 
+ Return only the result of the first operand.
  
- - parameter left: A parser which will be run and must succeed. It will provide the result for the combined parser.
+ - parameter left: A parser which will be run and must succeed. 
+ It will provide the result for the combined parser.
  
- - parameter right: A parser which will be run and must succeed for the combined parser to succeed by the result of which will not be returned.
+ - parameter right: A parser which will be run and must succeed for the combined parser to succeed. 
+ The result will not be returned.
  
- - returns: A Parser which will require both parser to succeed but will only return the result of the first. The result of the first parser to fail will be returned in the event of a failure.
+ - returns: A Parser which will require both parsers to succeed. 
+ It will only return the result of the first.
+ The result of the first parser to fail will be returned in the event of a failure.
  */
 
 precedencegroup DiscardSecond {

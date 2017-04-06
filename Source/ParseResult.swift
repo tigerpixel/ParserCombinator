@@ -9,7 +9,9 @@
 /**
  A result type for a single parse operation.
  
- - success: A successful parse operation containing the result. The tail is any characters left unparsed.
+ - success: A successful parse operation containing the result. 
+ The tail is any characters which are left unparsed.
+ 
  - failure: A failed parse operation. Further information is given by the details.
  */
 
@@ -46,6 +48,7 @@ public extension ParseResult {
  A description of a failed parsing operation.
  
  - insufficiantTokens: There are not enough character tokens remaining to assess the parsing operation.
+ 
  - custom: Used to convey custom parse failures when creating custom parsers.
  */
 
@@ -60,7 +63,8 @@ public enum ParseFailure: Equatable {
 /**
  Equality
 
- The failure should be for the same reason, if it is custom then the messages must match.
+ The failure case type should match.
+ If it is custom type then the message must match.
  */
 
 public func == (left: ParseFailure, right: ParseFailure) -> Bool {

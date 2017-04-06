@@ -7,18 +7,18 @@
 //
 
 /// A mapping function to convert an array of characters to a string.
-private let toString: ([Character]) -> String = { characters in String(characters) }
+public let toString: ([Character]) -> String = { characters in String(characters) }
 
-/// A string comprising of at least one character in CharacterSet.uppercaseLetters will pass, all others will fail.
+/// Only strings comprised exclusively of characters in CharacterSet.uppercaseLetters will pass.
 public let uppercaseString = uppercaseLetter.oneOrMany.map(toString)
 
-/// A string comprising of at least one character in CharacterSet.lowercaseLetters will pass, all others will fail.
+/// Only strings comprised exclusively of characters in CharacterSet.lowercaseLetters will pass.
 public let lowercaseString = lowercaseLetter.oneOrMany.map(toString)
 
-/// A string comprising of at least one character in CharacterSet.alphanumerics will pass, all others will fail.
+/// Only strings comprised exclusively of characters in CharacterSet.alphanumerics will pass.
 public let alphanumericString = alphanumeric.oneOrMany.map(toString)
 
-/// A string comprising of at least one character in the given characer set will pass, all others will fail.
+/// Only strings comprised exclusively of characters in the given characer set will pass.
 public func string(withCharactersInSet charSet: CharacterSet) -> Parser<String> {
     return (character { charSet.contains($0.unicodeScalar) }).oneOrMany.map(toString)
 }

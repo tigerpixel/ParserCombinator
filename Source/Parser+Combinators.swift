@@ -11,7 +11,7 @@ public extension Parser {
     /**
      Optionally parse the token and always return a success even if the token is not present.
      
-     - returns: An parser with optional contents which may resolve to a successful nil result.
+     - returns: A parser with optional contents which may resolve to a successful nil result.
      */
 
     var optional: Parser<Output?> {
@@ -122,7 +122,7 @@ public extension Parser {
     }
 
     /**
-     Combine two parsers to a single parser containing a tuple of the output of each in order.
+     Combine two parsers into a single parser containing a tuple of the output of each in order.
      
      This parser can be used to check for one token followed by another distinct token.
      

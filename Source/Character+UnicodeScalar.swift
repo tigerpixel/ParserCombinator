@@ -8,6 +8,7 @@
 
 extension Character {
 
+    /// The characters's value represented as Unicode scalar value.
     var unicodeScalar: UnicodeScalar {
         return String(self).unicodeScalars.first!
     }

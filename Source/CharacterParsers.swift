@@ -12,11 +12,11 @@
  A convienience method to make a parser for type "Character".
  
  A simple closure is supplied which describes a boolean result of if a character should match. 
- The parser runs the closure and uses that to assess if the character is successful.
+ The parser runs the closure and uses it to assess if the character is successful.
  
  - parameter condition: A closure which takes the character and returns a boolean result of its is parsability.
  
- - returns: The parser whith the same semantic as the closure given.
+ - returns: The parser with the same semantic as the closure given.
  */
 
 public func character(condition: @escaping (Character) -> Bool) -> Parser<Character> {
@@ -68,13 +68,13 @@ public func character(isEqualTo token: Character) -> Parser<Character> {
 }
 
 /**
- A convienience method to make a parser with a sinlge Character.
+ A convienience method to make a parser with a string.
  
- Only the given character will pass, all others will fail.
+ Only characters contained in the string will pass, all others will fail.
  
- - parameter isEqualTo: The character which is indented to pass.
+ - parameter isInString: The string containing the characters which should be accepted.
  
- - returns: The parser which will only allow the given character to pass, all others will fail.
+ - returns: The parser which will only allow the given characters to pass, all others will fail.
  */
 public func character(isInString string: String) -> Parser<Character> {
     return character { string.characters.contains($0) }
