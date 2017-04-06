@@ -7,7 +7,8 @@
 //
 
 /**
- The Parser operates on Character Views. These convienience methods take strings for ease of running.
+ The Parser operates on Character Views. 
+ These convienience methods take strings for ease of running.
 */
 public extension Parser {
 
@@ -28,11 +29,12 @@ public extension Parser {
     /**
      Enact a single run of the parser on a subject string. 
      
-     Hides the use of input character tokens and is preferred to calilng parse directly.
+     Hides the use of input character tokens and is preferred to calling parse directly.
      
      - parameter input: The pre-parsed subject of the parsing operation.
      
-     - returns: The successfully parsed object if it is resolved. .none, if parsing fails.
+     - returns: The successfully parsed object if it is successful.
+     Resolves to the optional .none if parsing fails.
      */
 
     func runAndResolve(withInput input: String) -> Output? {
