@@ -13,6 +13,7 @@
  
  A simple closure is supplied which describes a boolean result of if a character should match. 
  The parser runs the closure and uses it to assess if the character is successful.
+ The character assessed by the composer will be consumed by it and subtracted from the token stream.
  
  - parameter condition: A closure which takes the character and returns a boolean result of its is parsability.
  
@@ -45,6 +46,7 @@ public func character(condition: @escaping (Character) -> Bool) -> Parser<Charac
  A convienience method to make a parser with a CharacterSet.
  
  All characters found in the character set will pass, all others will fail.
+ The character assessed by the composer will be consumed by it and subtracted from the token stream.
  
  - parameter isInCharacterSet: A character set to which the character should belong.
  
@@ -58,6 +60,7 @@ public func character(isInCharacterSet charSet: CharacterSet) -> Parser<Characte
  A convienience method to make a parser which only accepts a sinlge Character.
  
  Only the given character will pass, all others will fail.
+ The character assessed by the composer will be consumed by it and subtracted from the token stream.
  
  - parameter isEqualTo: The character which is indented to pass.
  
@@ -71,6 +74,7 @@ public func character(isEqualTo token: Character) -> Parser<Character> {
  A convienience method to make a parser with a string.
  
  Only characters contained in the string will pass, all others will fail.
+ The character assessed by the composer will be consumed by it and subtracted from the token stream.
  
  - parameter isInString: The string containing the characters which should be accepted.
  

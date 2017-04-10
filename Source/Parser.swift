@@ -39,3 +39,20 @@ public extension Parser {
     }
 
 }
+
+/**
+ Create a parser of any value from that value.
+ 
+ Wraps a value in a parser. The parser returns that value as a successful result. 
+ 
+ This parser does not consume any tokens.
+ 
+ - parameter input: The transform function for the contained type.
+ 
+ - returns: A parser which returns a successful result with the given input and consumes zero tokens.
+ */
+
+public func pure<Output>(_ input: Output) -> Parser<Output> {
+
+    return Parser { .success(result: input, tail: $0) }
+}
