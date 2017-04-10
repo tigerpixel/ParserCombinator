@@ -12,7 +12,7 @@ Version 0.1.0
 
 Version 0.2.0
 -------------
-*Released 2017-04-06*
+*Released 2017-04-11*
 
 * Add basic combinators to deal with extending the parser structure.
 * Add basic operators to compose parsers into more useful parsers.
