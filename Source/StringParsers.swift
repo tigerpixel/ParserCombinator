@@ -9,6 +9,10 @@
 /// A mapping function to convert an array of characters to a string.
 public let toString: ([Character]) -> String = { characters in String(characters) }
 
+/**
+ Strings assessed by these composers will be consumed by them and subtracted from the token stream.
+ */
+
 /// Only strings comprised exclusively of characters in CharacterSet.uppercaseLetters will pass.
 public let uppercaseString = uppercaseLetter.oneOrMany.map(toString)
 

@@ -33,7 +33,7 @@ public extension Parser {
 
      It is not acceptable for there to be zero results, this will cause the parser to fail.
 
-     - returns: A parser which, if successful, will contain an array of one or more results.
+     - returns: A parser which will will contain an array of one or more results. Zero elements will fail.
      */
 
     var oneOrMany: Parser<[Output]> {

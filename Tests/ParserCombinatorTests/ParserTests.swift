@@ -35,4 +35,34 @@ class ParserTests: XCTestCase {
         XCTAssert(ParserTestHelper.hasInsufficiantTokens(parser: parserUnderTest))
     }
 
+    func testPure() {
+
+        let aParser = pure("a")
+
+        if case .success(let results) = aParser.run(withInput: "tail") {
+            XCTAssertEqual("a", results.result)
+            XCTAssertEqual("tail", String(results.tail))
+        } else {
+            XCTFail()
+        }
+
+        let oneParser = pure(1)
+
+        if case .success(let results) = oneParser.run(withInput: "tail") {
+            XCTAssertEqual(1, results.result)
+            XCTAssertEqual("tail", String(results.tail))
+        } else {
+            XCTFail()
+        }
+
+        let oneFloatParser = pure(1.0)
+
+        if case .success(let results) = oneFloatParser.run(withInput: "tail") {
+            XCTAssertEqual(1.0, results.result)
+            XCTAssertEqual("tail", String(results.tail))
+        } else {
+            XCTFail()
+        }
+    }
+
 }
