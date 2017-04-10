@@ -13,7 +13,7 @@ ParserCombinator attempts to create a simple and user friendly way to parse stri
 The parser can be enacted by calling the 'run' function: 
 
 ```swift
-myParser.run(on: "")
+myParser.run(on: "String to parse")
 ```
 
 The unit tests provide examples of using the parser and creating your own parsing rules.

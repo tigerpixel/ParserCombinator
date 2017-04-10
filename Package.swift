@@ -1,6 +1,6 @@
 //
 //  Package.swift
-//  Currier
+//  ParserCombinator
 //
 //  Created by Liam on 16/03/2017.
 //  Copyright © 2017 Tigerpixel Ltd. All rights reserved.
