@@ -296,7 +296,7 @@
 				0C1242141E7B1A8200457CBA /* ParseResultTests.swift */,
 				0C3C65C21E85C764009ED072 /* ParserOperatorTests.swift */,
 				0C2A7A9F1E938D710021E34B /* ParserOperatorTests+Combinations.swift */,
-				0C1437911E7CC9AC006E3D06 /* ConvienienceParsers */,
+				0C1437911E7CC9AC006E3D06 /* ConvenienceParsers */,
 				0C14378F1E7CC967006E3D06 /* FoundationExtensions */,
 			);
 			path = ParserCombinatorTests;
@@ -328,7 +328,7 @@
 			name = ConvienienceParsers;
 			sourceTree = "<group>";
 		};
-		0C1437911E7CC9AC006E3D06 /* ConvienienceParsers */ = {
+		0C1437911E7CC9AC006E3D06 /* ConvenienceParsers */ = {
 			isa = PBXGroup;
 			children = (
 				0C1437861E7CC357006E3D06 /* CharacterParserTests.swift */,
@@ -337,7 +337,7 @@
 				0C131CCC1E848BAB00C60A38 /* StringParserTests.swift */,
 				0C131CDA1E8493D000C60A38 /* NumberParserTests.swift */,
 			);
-			name = ConvienienceParsers;
+			name = ConvenienceParsers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
