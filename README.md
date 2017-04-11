@@ -8,7 +8,7 @@
 
 A simple parser combinator, created in Swift.
 
-ParserCombinator attempts to create a simple and user friendly way to parse strings into objects and structures. Technical terms are largely avoided and convienience parsers are provided.
+ParserCombinator attempts to create a simple and user friendly way to parse strings into objects and structures. Technical terms are largely avoided and convenience parsers are provided.
 
 The parser can be enacted by calling the 'run' function: 
 

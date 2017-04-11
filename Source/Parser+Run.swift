@@ -8,7 +8,7 @@
 
 /**
  The Parser operates on Character Views. 
- These convienience methods take strings for ease of running.
+ These convenience methods take strings for ease of running.
 */
 public extension Parser {
 

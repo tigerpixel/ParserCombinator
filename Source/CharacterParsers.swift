@@ -6,10 +6,10 @@
 //  Copyright © 2017 Tigerpixel Ltd. All rights reserved.
 //
 
-// MARK: A convienience method to make a parser for type "Character".
+// MARK: A convenience method to make a parser for type "Character".
 
 /**
- A convienience method to make a parser for type "Character".
+ A convenience method to make a parser for type "Character".
  
  A simple closure is supplied which describes a boolean result of if a character should match. 
  The parser runs the closure and uses it to assess if the character is successful.
@@ -43,7 +43,7 @@ public func character(condition: @escaping (Character) -> Bool) -> Parser<Charac
 // MARK: Pre-made pasers using the character parser function for defining sets of common characters.
 
 /**
- A convienience method to make a parser with a CharacterSet.
+ A convenience method to make a parser with a CharacterSet.
  
  All characters found in the character set will pass, all others will fail.
  The character assessed by the composer will be consumed by it and subtracted from the token stream.
@@ -57,7 +57,7 @@ public func character(isInCharacterSet charSet: CharacterSet) -> Parser<Characte
 }
 
 /**
- A convienience method to make a parser which only accepts a sinlge Character.
+ A convenience method to make a parser which only accepts a sinlge Character.
  
  Only the given character will pass, all others will fail.
  The character assessed by the composer will be consumed by it and subtracted from the token stream.
@@ -71,7 +71,7 @@ public func character(isEqualTo token: Character) -> Parser<Character> {
 }
 
 /**
- A convienience method to make a parser with a string.
+ A convenience method to make a parser with a string.
  
  Only characters contained in the string will pass, all others will fail.
  The character assessed by the composer will be consumed by it and subtracted from the token stream.
