@@ -11,7 +11,7 @@ import XCTest
 
 class CharacterParserTests: XCTestCase {
 
-    // MARK: Tests for the convienience method to make a parser for type "Character".
+    // MARK: Tests for the convenience method to make a parser for type "Character".
 
     func testCharacterWithCondition() {
 

@@ -16,4 +16,4 @@ Version 0.2.0
 
 * Add basic combinators to deal with extending the parser structure.
 * Add basic operators to compose parsers into more useful parsers.
-* Add convienience parsers for characters, numbers and strings.
+* Add convenience parsers for characters, numbers and strings.
