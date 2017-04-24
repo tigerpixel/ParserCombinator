@@ -174,7 +174,7 @@ public func *> <T, U>(left: Parser<T>, right: Parser<U>) ->  Parser<U> {
  */
 
 precedencegroup DiscardSecond {
-    higherThan: Or
+    higherThan: DiscardFirst
     associativity: left
 }
 
