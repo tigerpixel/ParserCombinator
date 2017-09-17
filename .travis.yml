@@ -1,4 +1,4 @@
-osx_image: xcode8.2
+osx_image: xcode8.3
 language: objective-c
 
 install:
@@ -10,7 +10,7 @@ script:
 
 - swiftlint
 
-- xcodebuild test -project ParserCombinator.xcodeproj -scheme ParserCombinator-iOS -destination 'platform=iOS Simulator,OS=10.1,name=iPhone 7'
-- xcodebuild test -project ParserCombinator.xcodeproj -scheme ParserCombinator-macOS -destination 'platform=OS X,arch=x86_64' 
+- xcodebuild test -project ParserCombinator.xcodeproj -scheme ParserCombinator-iOS -destination 'platform=iOS Simulator,OS=latest,name=iPhone 7'
+- xcodebuild test -project ParserCombinator.xcodeproj -scheme ParserCombinator-macOS -destination 'platform=macOS,arch=x86_64' 
 - xcodebuild test -project ParserCombinator.xcodeproj -scheme ParserCombinator-tvOS -destination 'platform=tvOS Simulator,name=Apple TV 1080p'
 - xcodebuild -project ParserCombinator.xcodeproj -scheme ParserCombinator-watchOS

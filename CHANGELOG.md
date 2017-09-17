@@ -17,3 +17,11 @@ Version 0.2.0
 * Add basic combinators to deal with extending the parser structure.
 * Add basic operators to compose parsers into more useful parsers.
 * Add convenience parsers for characters, numbers and strings.
+
+Version 0.3.0
+-------------
+*Released 2017-09-17*
+
+* Add swift version file.
+* Update Swift version and documentation for Swift 3.1.
+
