@@ -25,3 +25,10 @@ Version 0.3.0
 * Add swift version file.
 * Update Swift version and documentation for Swift 3.1.
 
+Version 1.0.0
+-------------
+*Released 2017-09-18*
+
+* Add import for Foundation on files which contain character sets.
+* Bump to release.
+
