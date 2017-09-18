@@ -5,6 +5,7 @@
 //  Created by Liam on 22/03/2017.
 //  Copyright © 2017 Tigerpixel Ltd. All rights reserved.
 //
+import Foundation
 
 /// A mapping function to convert an array of characters to a string.
 public let toString: ([Character]) -> String = { characters in String(characters) }

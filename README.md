@@ -56,7 +56,7 @@ If you use it to manage your dependencies, simply add ParserCombinator to the de
 
 ```swift
 dependencies: [
-    .Package(url: "https://github.com/Tigerpixel/ParserCombinator.git", majorVersion: 0)
+    .Package(url: "https://github.com/Tigerpixel/ParserCombinator.git", majorVersion: 1)
 ]
 ```
 
