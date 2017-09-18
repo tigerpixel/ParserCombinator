@@ -5,6 +5,7 @@
 //  Created by Liam on 18/03/2017.
 //  Copyright © 2017 Tigerpixel Ltd. All rights reserved.
 //
+import Foundation
 
 // MARK: A convenience method to make a parser for type "Character".
 
