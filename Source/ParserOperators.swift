@@ -34,7 +34,7 @@ precedencegroup SequentialApplication {
 infix operator <*> : SequentialApplication
 
 public func <*> <T, U>(left: Parser<(T) -> U>, right: Parser<T>) ->  Parser<U> {
-    return left.followed(by: right).map { f, x in f(x) }
+    return left.followed(by: right).map { leftContents, rightContents in leftContents(rightContents) }
 }
 
 /**
@@ -62,7 +62,7 @@ precedencegroup OptionalSequentialApplication {
 infix operator <?> : OptionalSequentialApplication
 
 public func <?> <T, U>(left: Parser<(T?) -> U>, right: Parser<T?>) ->  Parser<U> {
-    return left.followed(by: right).map { f, x in f(x) }
+    return left.followed(by: right).map { leftContents, rightContents in leftContents(rightContents) }
 }
 
 /**

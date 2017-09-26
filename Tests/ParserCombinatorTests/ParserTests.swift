@@ -22,14 +22,14 @@ class ParserTests: XCTestCase {
             XCTAssertEqual("true", results.result)
             XCTAssertEqual("aa", String(results.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "sss") {
             XCTAssertEqual("false", results.result)
             XCTAssertEqual("ss", String(results.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
 
         XCTAssert(ParserTestHelper.hasInsufficiantTokens(parser: parserUnderTest))
@@ -43,7 +43,7 @@ class ParserTests: XCTestCase {
             XCTAssertEqual("a", results.result)
             XCTAssertEqual("tail", String(results.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
 
         let oneParser = pure(1)
@@ -52,7 +52,7 @@ class ParserTests: XCTestCase {
             XCTAssertEqual(1, results.result)
             XCTAssertEqual("tail", String(results.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
 
         let oneFloatParser = pure(1.0)
@@ -61,7 +61,7 @@ class ParserTests: XCTestCase {
             XCTAssertEqual(1.0, results.result)
             XCTAssertEqual("tail", String(results.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
     }
 

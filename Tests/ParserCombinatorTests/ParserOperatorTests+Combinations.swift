@@ -52,14 +52,14 @@ class ParserOperatorPlusCombinationsTests: XCTestCase {
             XCTAssertEqual("funabc", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "acd") {
             XCTAssertEqual("funa-c", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
 
         // Test right side of OR is acceptable.
@@ -68,14 +68,14 @@ class ParserOperatorPlusCombinationsTests: XCTestCase {
             XCTAssertEqual("funabf", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "aef") {
             XCTAssertEqual("funa-f", results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
     }
 
@@ -97,42 +97,42 @@ class ParserOperatorPlusCombinationsTests: XCTestCase {
             XCTAssertEqual("c", String(unexpected.token))
             XCTAssertEqual("", String(unexpected.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should find an unexpected token")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: "ac") {
             XCTAssertEqual("c", String(unexpected.token))
             XCTAssertEqual("", String(unexpected.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should find an unexpected token")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: "abd") {
             XCTAssertEqual("d", String(unexpected.token))
             XCTAssertEqual("", String(unexpected.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should find an unexpected token")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: "ad") {
             XCTAssertEqual("d", String(unexpected.token))
             XCTAssertEqual("", String(unexpected.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should find an unexpected token")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: "abf") {
             XCTAssertEqual("f", String(unexpected.token))
             XCTAssertEqual("", String(unexpected.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should find an unexpected token")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: "af") {
             XCTAssertEqual("f", String(unexpected.token))
             XCTAssertEqual("", String(unexpected.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should find an unexpected token")
         }
 
         XCTAssert(ParserTestHelper.hasInsufficiantTokens(parser: parserUnderTest, with: "abe"))
@@ -147,28 +147,28 @@ class ParserOperatorPlusCombinationsTests: XCTestCase {
             XCTAssertEqual("x", String(unexpected.token))
             XCTAssertEqual("cd", String(unexpected.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should find an unexpected token")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: "aacd") {
             XCTAssertEqual("a", String(unexpected.token))
             XCTAssertEqual("cd", String(unexpected.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should find an unexpected token")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: "adcd") {
             XCTAssertEqual("d", String(unexpected.token))
             XCTAssertEqual("cd", String(unexpected.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should find an unexpected token")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: "a#ef") {
             XCTAssertEqual("#", String(unexpected.token))
             XCTAssertEqual("ef", String(unexpected.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should find an unexpected token")
         }
     }
 
