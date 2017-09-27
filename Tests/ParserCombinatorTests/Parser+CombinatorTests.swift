@@ -19,28 +19,28 @@ class ParserPlusCombinatorTests: XCTestCase {
             XCTAssertEqual(true, results.result.0)
             XCTAssertEqual(true, results.result.1)
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "ab") {
             XCTAssertEqual(true, results.result.0)
             XCTAssertEqual(false, results.result.1)
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "ba") {
             XCTAssertEqual(false, results.result.0)
             XCTAssertEqual(true, results.result.1)
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "bb") {
             XCTAssertEqual(false, results.result.0)
             XCTAssertEqual(false, results.result.1)
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
 
         XCTAssert(ParserTestHelper.hasInsufficiantTokens(parser: parserUnderTest))
@@ -55,21 +55,21 @@ class ParserPlusCombinatorTests: XCTestCase {
             XCTAssertEqual(true, results.result)
             XCTAssertEqual("aa", String(results.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "a") {
             XCTAssertEqual(true, results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "") {
             XCTAssertEqual(nil, results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
     }
 
@@ -81,14 +81,14 @@ class ParserPlusCombinatorTests: XCTestCase {
             XCTAssertEqual([true], results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "abab") {
             XCTAssertEqual([true, false, true, false], results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
 
         XCTAssert(ParserTestHelper.hasInsufficiantTokens(parser: parserUnderTest))
@@ -102,21 +102,21 @@ class ParserPlusCombinatorTests: XCTestCase {
             XCTAssertEqual([true], results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "abab") {
             XCTAssertEqual([true, false, true, false], results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "") {
             XCTAssertEqual([], results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
     }
 
@@ -129,21 +129,21 @@ class ParserPlusCombinatorTests: XCTestCase {
             XCTAssertEqual([true, false, true], results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "baa") {
             XCTAssertEqual([false, true, true], results.result)
             XCTAssertEqual("", String(results.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "ababa") {
             XCTAssertEqual([true, false, true], results.result)
             XCTAssertEqual("ba", String(results.tail))
         } else {
-            XCTFail()
+            XCTFail("The parser should succeed")
         }
 
         XCTAssert(ParserTestHelper.hasInsufficiantTokens(parser: parserUnderTest, with: "ab"))
