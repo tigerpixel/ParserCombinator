@@ -9,44 +9,32 @@
 import XCTest
 @testable import ParserCombinator
 
+private let testParseAToTrue = ParserTestHelper.characterAtoTrueParser()
+
 class ParserPlusRunTests: XCTestCase {
 
     // MARK: Run and resolve result to optional.
 
     func testRunAndResolveParserWithSuccessMatch() {
 
-        let testParser = ParserTestHelper.aParser()
-
-        let output = testParser.runAndResolve(withInput: "a")
-
-        XCTAssertEqual(true, output)
+        XCTAssertEqual(true, testParseAToTrue.runAndResolve(withInput: "a"))
     }
 
     func testRunAndResolveParserWithSuccessMismatch() {
 
-        let testParser = ParserTestHelper.aParser()
-
-        let output = testParser.runAndResolve(withInput: "b")
-
-        XCTAssertEqual(false, output)
+        XCTAssertEqual(false, testParseAToTrue.runAndResolve(withInput: "b"))
     }
 
     func testRunAndResolveParserWithNoInputTokens() {
 
-        let testParser = ParserTestHelper.aParser()
-
-        let output = testParser.runAndResolve(withInput: "")
-
-        XCTAssertEqual(nil, output)
+        XCTAssertEqual(nil, testParseAToTrue.runAndResolve(withInput: ""))
     }
 
     // MARK: Run and manually resolve result.
 
     func testRunParserWithSuccessMatch() {
 
-        let testParser = ParserTestHelper.aParser()
-
-        let parseResult = testParser.run(withInput: "a")
+        let parseResult = testParseAToTrue.run(withInput: "a")
 
         guard case .success(let result, let tail) = parseResult else {
             XCTFail("Expected success case received \(parseResult).")
@@ -54,14 +42,12 @@ class ParserPlusRunTests: XCTestCase {
         }
 
         XCTAssertEqual(true, result)
-        XCTAssertEqual("", String(tail))
+        XCTAssertEqual("", tail)
     }
 
     func testRunParserWithSuccessMismatch() {
 
-        let testParser = ParserTestHelper.aParser()
-
-        let parseResult = testParser.run(withInput: "b")
+        let parseResult = testParseAToTrue.run(withInput: "b")
 
         guard case .success(let result, let tail) = parseResult else {
             XCTFail("Expected success case received \(parseResult).")
@@ -69,14 +55,12 @@ class ParserPlusRunTests: XCTestCase {
         }
 
         XCTAssertEqual(false, result)
-        XCTAssertEqual("", String(tail))
+        XCTAssertEqual("", tail)
     }
 
     func testRunParserWithNoInputTokens() {
 
-        let testParser = ParserTestHelper.aParser()
-
-        let parseResult = testParser.run(withInput: "")
+        let parseResult = testParseAToTrue.run(withInput: "")
 
         guard case .failure(let reason) = parseResult else {
             XCTFail("Expected failure case received \(parseResult).")

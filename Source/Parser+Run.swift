@@ -23,7 +23,7 @@ public extension Parser {
      */
 
     func run(withInput input: String) -> ParseResult<Output> {
-        return parse(input.characters)
+        return parse(Substring(input))
     }
 
     /**
@@ -39,7 +39,7 @@ public extension Parser {
 
     func runAndResolve(withInput input: String) -> Output? {
 
-        guard case .success(let result, _) = parse(input.characters) else {
+        guard case .success(let result, _) = parse(Substring(input)) else {
             return nil
         }
 

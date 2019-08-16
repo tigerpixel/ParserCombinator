@@ -15,8 +15,7 @@
 public struct Parser<Output> {
 
     ///A function that specifices the consuming of zero or more tokens and resolving them into a result.
-    let parse: (TokenStream) -> ParseResult<Output>
-
+    let parse: (Substring) -> ParseResult<Output>
 }
 
 public extension Parser {
@@ -54,5 +53,5 @@ public extension Parser {
 
 public func pure<Output>(_ input: Output) -> Parser<Output> {
 
-    return Parser { .success(result: input, tail: $0) }
+    return Parser { ParseResult<Output>.success(result: input, tail: $0) }
 }

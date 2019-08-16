@@ -12,7 +12,6 @@
 		0C12421E1E7B1AA400457CBA /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421A1E7B1AA400457CBA /* Parser.swift */; };
 		0C12421F1E7B1AA400457CBA /* Parser+Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421B1E7B1AA400457CBA /* Parser+Run.swift */; };
 		0C1242201E7B1AA400457CBA /* ParseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421C1E7B1AA400457CBA /* ParseResult.swift */; };
-		0C1242211E7B1AA400457CBA /* TokenStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421D1E7B1AA400457CBA /* TokenStream.swift */; };
 		0C1242231E7B1B0D00457CBA /* ParseResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1242141E7B1A8200457CBA /* ParseResultTests.swift */; };
 		0C1242241E7B1B1000457CBA /* Parser+CombinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1242151E7B1A8200457CBA /* Parser+CombinatorTests.swift */; };
 		0C131CC41E8320E000C60A38 /* ParserTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C131CC21E831E9600C60A38 /* ParserTestHelper.swift */; };
@@ -64,18 +63,15 @@
 		0C26E0EB1E7BDA0300779771 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421A1E7B1AA400457CBA /* Parser.swift */; };
 		0C26E0EC1E7BDA0300779771 /* Parser+Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421B1E7B1AA400457CBA /* Parser+Run.swift */; };
 		0C26E0ED1E7BDA0300779771 /* ParseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421C1E7B1AA400457CBA /* ParseResult.swift */; };
-		0C26E0EE1E7BDA0300779771 /* TokenStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421D1E7B1AA400457CBA /* TokenStream.swift */; };
 		0C26E0EF1E7BDA2800779771 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421A1E7B1AA400457CBA /* Parser.swift */; };
 		0C26E0F01E7BDA2800779771 /* Parser+Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421B1E7B1AA400457CBA /* Parser+Run.swift */; };
 		0C26E0F11E7BDA2800779771 /* ParseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421C1E7B1AA400457CBA /* ParseResult.swift */; };
-		0C26E0F21E7BDA2800779771 /* TokenStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421D1E7B1AA400457CBA /* TokenStream.swift */; };
 		0C26E0F71E7BDA4B00779771 /* ParserCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C07C29E1E5251BA00A921A8 /* ParserCombinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C26E0F81E7BDA5800779771 /* ParserCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C07C29E1E5251BA00A921A8 /* ParserCombinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C26E1071E7BDB2500779771 /* ParserCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C07C29E1E5251BA00A921A8 /* ParserCombinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C26E1081E7BDB3B00779771 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421A1E7B1AA400457CBA /* Parser.swift */; };
 		0C26E1091E7BDB3B00779771 /* Parser+Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421B1E7B1AA400457CBA /* Parser+Run.swift */; };
 		0C26E10A1E7BDB3B00779771 /* ParseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421C1E7B1AA400457CBA /* ParseResult.swift */; };
-		0C26E10B1E7BDB3B00779771 /* TokenStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12421D1E7B1AA400457CBA /* TokenStream.swift */; };
 		0C26E10C1E7BE73A00779771 /* ParseResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1242141E7B1A8200457CBA /* ParseResultTests.swift */; };
 		0C26E10D1E7BE73A00779771 /* Parser+CombinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1242151E7B1A8200457CBA /* Parser+CombinatorTests.swift */; };
 		0C26E10E1E7BE77700779771 /* ParseResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1242141E7B1A8200457CBA /* ParseResultTests.swift */; };
@@ -134,7 +130,6 @@
 		0C12421A1E7B1AA400457CBA /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		0C12421B1E7B1AA400457CBA /* Parser+Run.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Parser+Run.swift"; sourceTree = "<group>"; };
 		0C12421C1E7B1AA400457CBA /* ParseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseResult.swift; sourceTree = "<group>"; };
-		0C12421D1E7B1AA400457CBA /* TokenStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenStream.swift; sourceTree = "<group>"; };
 		0C1242251E7B1B8400457CBA /* ParserCombinator.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ParserCombinator.podspec; sourceTree = "<group>"; };
 		0C131CC21E831E9600C60A38 /* ParserTestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTestHelper.swift; sourceTree = "<group>"; };
 		0C131CC71E8330AE00C60A38 /* StringParsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringParsers.swift; sourceTree = "<group>"; };
@@ -258,7 +253,6 @@
 				0C3C65B41E85B96D009ED072 /* Parser+Combinators.swift */,
 				0C131CDE1E84A99B00C60A38 /* ParserOperators.swift */,
 				0C12421C1E7B1AA400457CBA /* ParseResult.swift */,
-				0C12421D1E7B1AA400457CBA /* TokenStream.swift */,
 				0C1437901E7CC990006E3D06 /* ConvienienceParsers */,
 				0C14378E1E7CC94E006E3D06 /* FoundationExtensions */,
 			);
@@ -512,53 +506,54 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Tigerpixel Ltd";
 				TargetAttributes = {
 					0C07C29A1E5251BA00A921A8 = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 					};
 					0C07C2A31E5251BB00A921A8 = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 					};
 					0C26E09B1E7BD82800779771 = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Manual;
 					};
 					0C26E0A31E7BD82900779771 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = X9VLH29SKZ;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 					};
 					0C26E0B71E7BD84C00779771 = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 					};
 					0C26E0BF1E7BD84D00779771 = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 					};
 					0C26E0FE1E7BDAEC00779771 = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = 0C07C2951E5251BA00A921A8 /* Build configuration list for PBXProject "ParserCombinator" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 0C07C2911E5251BA00A921A8;
 			productRefGroup = 0C07C29C1E5251BA00A921A8 /* Products */;
@@ -631,7 +626,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		0C1242271E7B303900457CBA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -640,7 +635,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -655,7 +650,6 @@
 				0C12421F1E7B1AA400457CBA /* Parser+Run.swift in Sources */,
 				0C131CDF1E84A99B00C60A38 /* ParserOperators.swift in Sources */,
 				0C1242201E7B1AA400457CBA /* ParseResult.swift in Sources */,
-				0C1242211E7B1AA400457CBA /* TokenStream.swift in Sources */,
 				0C14377D1E7CC179006E3D06 /* CharacterParsers.swift in Sources */,
 				0C131CD61E84937B00C60A38 /* NumberParsers.swift in Sources */,
 				0C3C65B51E85B96D009ED072 /* Parser+Combinators.swift in Sources */,
@@ -692,7 +686,6 @@
 				0C26E0EC1E7BDA0300779771 /* Parser+Run.swift in Sources */,
 				0C131CE11E84A99B00C60A38 /* ParserOperators.swift in Sources */,
 				0C26E0ED1E7BDA0300779771 /* ParseResult.swift in Sources */,
-				0C26E0EE1E7BDA0300779771 /* TokenStream.swift in Sources */,
 				0C14377F1E7CC179006E3D06 /* CharacterParsers.swift in Sources */,
 				0C131CD81E84937B00C60A38 /* NumberParsers.swift in Sources */,
 				0C3C65B71E85B96D009ED072 /* Parser+Combinators.swift in Sources */,
@@ -730,7 +723,6 @@
 				0C3C65C71E85C7D2009ED072 /* Parser+Combinators.swift in Sources */,
 				0C131CE21E84A99B00C60A38 /* ParserOperators.swift in Sources */,
 				0C26E0F11E7BDA2800779771 /* ParseResult.swift in Sources */,
-				0C26E0F21E7BDA2800779771 /* TokenStream.swift in Sources */,
 				0C1437801E7CC179006E3D06 /* CharacterParsers.swift in Sources */,
 				0C131CD91E84937B00C60A38 /* NumberParsers.swift in Sources */,
 			);
@@ -766,7 +758,6 @@
 				0C26E1091E7BDB3B00779771 /* Parser+Run.swift in Sources */,
 				0C131CE01E84A99B00C60A38 /* ParserOperators.swift in Sources */,
 				0C26E10A1E7BDB3B00779771 /* ParseResult.swift in Sources */,
-				0C26E10B1E7BDB3B00779771 /* TokenStream.swift in Sources */,
 				0C14377E1E7CC179006E3D06 /* CharacterParsers.swift in Sources */,
 				0C131CD71E84937B00C60A38 /* NumberParsers.swift in Sources */,
 				0C3C65B61E85B96D009ED072 /* Parser+Combinators.swift in Sources */,
@@ -798,6 +789,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -807,6 +799,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -814,6 +807,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -858,6 +852,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -867,6 +862,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -874,6 +870,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -926,8 +923,7 @@
 				PRODUCT_NAME = ParserCombinator;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -949,8 +945,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigerpixel.ParserCombinator;
 				PRODUCT_NAME = ParserCombinator;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -963,8 +958,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigerpixel.ParserCombinatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -977,8 +971,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigerpixel.ParserCombinatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1002,8 +995,7 @@
 				PRODUCT_NAME = ParserCombinator;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1027,8 +1019,7 @@
 				PRODUCT_NAME = ParserCombinator;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1045,8 +1036,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tigerpixel.ParserCombinator-macOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1063,8 +1053,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tigerpixel.ParserCombinator-macOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1085,8 +1074,7 @@
 				PRODUCT_NAME = ParserCombinator;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -1109,8 +1097,7 @@
 				PRODUCT_NAME = ParserCombinator;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -1126,8 +1113,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tigerpixel.ParserCombinator-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
@@ -1142,8 +1129,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tigerpixel.ParserCombinator-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -1165,8 +1152,7 @@
 				PRODUCT_NAME = ParserCombinator;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -1189,8 +1175,7 @@
 				PRODUCT_NAME = ParserCombinator;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};

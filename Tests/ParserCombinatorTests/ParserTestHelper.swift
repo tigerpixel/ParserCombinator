@@ -17,7 +17,7 @@ struct ParserTestHelper {
     /* Checks for a value of "a" and moves on one character (token).
     "a" resolves Bool true, anything else that is a token resolves Bool false. No tokens fails.*/
 
-    static func aParser() -> Parser<Bool> {
+    static func characterAtoTrueParser() -> Parser<Bool> {
 
         return Parser { stream in
 
@@ -43,9 +43,8 @@ struct ParserTestHelper {
             }
 
             guard character == streamToken else {
-                let token = streamToken.tokenized()
                 let tail = stream.dropFirst()
-                return .failure(details: .unexpectedToken(token: token, tail: tail))
+                return .failure(details: .unexpectedToken(token: streamToken, tail: tail))
             }
             // Need to drop first element so tht the parser moves on.
             return .success(result: character, tail: stream.dropFirst())
@@ -83,7 +82,7 @@ struct ParserTestHelper {
     }
 
     static func findUnexpectedToken<Output>(running parser: Parser<Output>, with tokens: String)
-        -> (token: TokenStream, tail: TokenStream)? {
+        -> (token: Character, tail: Substring)? {
 
         if
             case .failure(let reason) = parser.run(withInput: tokens),

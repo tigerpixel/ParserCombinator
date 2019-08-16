@@ -17,35 +17,35 @@ class NumberParserTests: XCTestCase {
 
         if case .success(let results) = parserUnderTest.run(withInput: "1") {
             XCTAssertEqual(1, results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "10") {
             XCTAssertEqual(10, results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "1023") {
             XCTAssertEqual(1023, results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "123d") {
             XCTAssertEqual(123, results.result)
-            XCTAssertEqual("d", String(results.tail))
+            XCTAssertEqual("d", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: fullstop, with: "aBCD") {
-            XCTAssertEqual("a", String(unexpected.token))
-            XCTAssertEqual("BCD", String(unexpected.tail))
+            XCTAssertEqual("a", unexpected.token)
+            XCTAssertEqual("BCD", unexpected.tail)
         } else {
             XCTFail("The parser should find an unexpected token")
         }
