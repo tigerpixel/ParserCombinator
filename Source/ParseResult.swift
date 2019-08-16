@@ -16,10 +16,10 @@
  */
 
 public enum ParseResult<Output> {
-    // swiftlint:disable identifier_name // Triggers a false positive in swift lint.
+
     case success(result: Output, tail: Substring)
     case failure(details: ParseFailure)
-    // swiftlint:enable identifier_name
+
 }
 
 /**
@@ -55,10 +55,8 @@ public extension ParseResult {
 public enum ParseFailure: Equatable {
 
     case insufficiantTokens
-    // swiftlint:disable identifier_name // Triggers a false positive in swift lint.
     case unexpectedToken(token: Character, tail: Substring)
     case custom(message: String)
-    // swiftlint:enable identifier_name
 }
 
 /**

@@ -120,7 +120,7 @@ public let whitespaceOrNewline = character(isInCharacterSet: .whitespacesAndNewl
 // MARK: Pre-made pasers using the character parser function for single everyday characters.
 
 /// Only the comma character will pass, all others will fail.
-public let comma = character(isEqualTo:",")
+public let comma = character(isEqualTo: ",")
 
 /// Only the full-stop character will pass, all others will fail.
-public let fullstop = character(isEqualTo:".")
+public let fullstop = character(isEqualTo: ".")
