@@ -41,8 +41,10 @@
 
 ## Version 2.0.0
 
-### *Released 2019-09-01*
+### *Released 2019-08-18*
 
 * Swift 5 and Xcode 10.3 updates.
 * Swiftlint version update to 0.34.0
-* Add failure messages to all XCFail test cases.
+* Remove string copies using Swift 5 string updates.
+* Remove some typealiases masking Swift types for transparency.
+* Increase unit test readability.
