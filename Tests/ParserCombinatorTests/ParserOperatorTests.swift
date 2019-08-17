@@ -9,39 +9,39 @@
 import XCTest
 @testable import ParserCombinator
 
+private func twice(character: Character) -> String {
+    return String([character, character])
+}
+
 class ParserOperatorTests: XCTestCase {
 
     // MARK: Test the functionlity of single operators.
 
     func testSequentialApplicationOperator() {
 
-        func twice(character: Character) -> String {
-            return String(character) + String(character)
-        }
-
         // A parser where the result is a function.
         let function = Parser { .success(result: twice, tail: $0) }
-        let a = ParserTestHelper.characterOrFailureParser(with: "a")
+        let aChar = ParserTestHelper.characterOrFailureParser(with: "a")
 
-        let parserUnderTest = function <*> a // Result of "function" parser with "a" applied to it.
+        let parserUnderTest = function <*> aChar // Result of "function" parser with "a" applied to it.
 
         if case .success(let results) = parserUnderTest.run(withInput: "a") {
             XCTAssertEqual("aa", results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "atail") {
             XCTAssertEqual("aa", results.result)
-            XCTAssertEqual("tail", String(results.tail))
+            XCTAssertEqual("tail", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: "cba") {
-            XCTAssertEqual("c", String(unexpected.token))
-            XCTAssertEqual("ba", String(unexpected.tail))
+            XCTAssertEqual("c", unexpected.token)
+            XCTAssertEqual("ba", unexpected.tail)
         } else {
             XCTFail("The parser should find an unexpected token")
         }
@@ -53,7 +53,7 @@ class ParserOperatorTests: XCTestCase {
 
         func twice(character: Character?) -> String {
             if let character = character {
-                return String(character) + String(character)
+                return String([character, character])
 
             }
             return ""
@@ -61,27 +61,27 @@ class ParserOperatorTests: XCTestCase {
 
         // A parser where the result is a function.
         let function = Parser { .success(result: twice, tail: $0) }
-        let a: Parser<Character?> = ParserTestHelper.optionalCharacterParser(with: "a")
+        let aChar: Parser<Character?> = ParserTestHelper.optionalCharacterParser(with: "a")
 
-        let parserUnderTest = function <?> a // Result of "function" parser with "a" applied to it.
+        let parserUnderTest = function <?> aChar // Result of "function" parser with "a" applied to it.
 
         if case .success(let results) = parserUnderTest.run(withInput: "a") {
             XCTAssertEqual("aa", results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "atail") {
             XCTAssertEqual("aa", results.result)
-            XCTAssertEqual("tail", String(results.tail))
+            XCTAssertEqual("tail", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "cba") {
             XCTAssertEqual("", results.result)
-            XCTAssertEqual("cba", String(results.tail))
+            XCTAssertEqual("cba", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
@@ -91,31 +91,27 @@ class ParserOperatorTests: XCTestCase {
 
     func testFMapCombinatorOperator() {
 
-        func twice(character: Character) -> String {
-            return String(character) + String(character)
-        }
+        let aChar = ParserTestHelper.characterOrFailureParser(with: "a")
 
-        let a = ParserTestHelper.characterOrFailureParser(with: "a")
-
-        let parserUnderTest = twice <^> a // Result of "function" with "a" applied to it.
+        let parserUnderTest = twice <^> aChar // Result of "function" with "a" applied to it.
 
         if case .success(let results) = parserUnderTest.run(withInput: "a") {
             XCTAssertEqual("aa", results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "atail") {
             XCTAssertEqual("aa", results.result)
-            XCTAssertEqual("tail", String(results.tail))
+            XCTAssertEqual("tail", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: "cba") {
-            XCTAssertEqual("c", String(unexpected.token))
-            XCTAssertEqual("ba", String(unexpected.tail))
+            XCTAssertEqual("c", unexpected.token)
+            XCTAssertEqual("ba", unexpected.tail)
         } else {
             XCTFail("The parser should find an unexpected token")
         }
@@ -123,35 +119,35 @@ class ParserOperatorTests: XCTestCase {
 
     func testOrOperator() {
 
-        let a = ParserTestHelper.characterOrFailureParser(with: "a")
-        let b = ParserTestHelper.characterOrFailureParser(with: "b")
+        let aChar = ParserTestHelper.characterOrFailureParser(with: "a")
+        let bChar = ParserTestHelper.characterOrFailureParser(with: "b")
 
-        let parserUnderTest = a <|> b // "a" or "b"
+        let parserUnderTest = aChar <|> bChar // "a" or "b"
 
         if case .success(let results) = parserUnderTest.run(withInput: "a") {
             XCTAssertEqual("a", results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "b") {
             XCTAssertEqual("b", results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "atail") {
             XCTAssertEqual("a", results.result)
-            XCTAssertEqual("tail", String(results.tail))
+            XCTAssertEqual("tail", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: "cba") {
-            XCTAssertEqual("c", String(unexpected.token))
-            XCTAssertEqual("ba", String(unexpected.tail))
+            XCTAssertEqual("c", unexpected.token)
+            XCTAssertEqual("ba", unexpected.tail)
         } else {
             XCTFail("The parser should find an unexpected token")
         }
@@ -161,42 +157,42 @@ class ParserOperatorTests: XCTestCase {
 
     func testDiscardFirstOperator() {
 
-        let a = ParserTestHelper.characterOrFailureParser(with: "a")
-        let b = ParserTestHelper.characterOrFailureParser(with: "b")
+        let aChar = ParserTestHelper.characterOrFailureParser(with: "a")
+        let bChar = ParserTestHelper.characterOrFailureParser(with: "b")
 
-        let parserUnderTest = a *> b // Check "a" followed by "b", but then only return "b"
+        let parserUnderTest = aChar *> bChar // Check "a" followed by "b", but then only return "b"
 
         if case .success(let results) = parserUnderTest.run(withInput: "ab") {
             XCTAssertEqual("b", results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "abtail") {
             XCTAssertEqual("b", results.result)
-            XCTAssertEqual("tail", String(results.tail))
+            XCTAssertEqual("tail", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: "aad") {
-            XCTAssertEqual("a", String(unexpected.token))
-            XCTAssertEqual("d", String(unexpected.tail))
+            XCTAssertEqual("a", unexpected.token)
+            XCTAssertEqual("d", unexpected.tail)
         } else {
             XCTFail("The parser should find an unexpected token")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: "bad") {
-            XCTAssertEqual("b", String(unexpected.token))
-            XCTAssertEqual("ad", String(unexpected.tail))
+            XCTAssertEqual("b", unexpected.token)
+            XCTAssertEqual("ad", unexpected.tail)
         } else {
             XCTFail("The parser should find an unexpected token")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: "b") {
-            XCTAssertEqual("b", String(unexpected.token))
-            XCTAssertEqual("", String(unexpected.tail))
+            XCTAssertEqual("b", unexpected.token)
+            XCTAssertEqual("", unexpected.tail)
         } else {
             XCTFail("The parser should find an unexpected token")
         }
@@ -207,42 +203,42 @@ class ParserOperatorTests: XCTestCase {
 
     func testDiscardSecondOperator() {
 
-        let a = ParserTestHelper.characterOrFailureParser(with: "a")
-        let b = ParserTestHelper.characterOrFailureParser(with: "b")
+        let aChar = ParserTestHelper.characterOrFailureParser(with: "a")
+        let bChar = ParserTestHelper.characterOrFailureParser(with: "b")
 
-        let parserUnderTest = a <* b // Check "a" followed by "b", but then only return "a"
+        let parserUnderTest = aChar <* bChar // Check "a" followed by "b", but then only return "a"
 
         if case .success(let results) = parserUnderTest.run(withInput: "ab") {
             XCTAssertEqual("a", results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "abtail") {
             XCTAssertEqual("a", results.result)
-            XCTAssertEqual("tail", String(results.tail))
+            XCTAssertEqual("tail", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: "aad") {
-            XCTAssertEqual("a", String(unexpected.token))
-            XCTAssertEqual("d", String(unexpected.tail))
+            XCTAssertEqual("a", unexpected.token)
+            XCTAssertEqual("d", unexpected.tail)
         } else {
             XCTFail("The parser should find an unexpected token")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: "bad") {
-            XCTAssertEqual("b", String(unexpected.token))
-            XCTAssertEqual("ad", String(unexpected.tail))
+            XCTAssertEqual("b", unexpected.token)
+            XCTAssertEqual("ad", unexpected.tail)
         } else {
             XCTFail("The parser should find an unexpected token")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: "b") {
-            XCTAssertEqual("b", String(unexpected.token))
-            XCTAssertEqual("", String(unexpected.tail))
+            XCTAssertEqual("b", unexpected.token)
+            XCTAssertEqual("", unexpected.tail)
         } else {
             XCTFail("The parser should find an unexpected token")
         }

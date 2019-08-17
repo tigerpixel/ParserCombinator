@@ -33,7 +33,10 @@ public func character(condition: @escaping (Character) -> Bool) -> Parser<Charac
 
         guard condition(character) else {
 
-            return .failure(details: .unexpectedToken(token: character.tokenized(), tail: tail))
+            let failure: ParseFailure = .unexpectedToken(token: character,
+                                                         tail: tail)
+
+            return .failure(details: failure)
         }
 
         // Drop first element so that the parser moves on from the current character.
@@ -82,7 +85,7 @@ public func character(isEqualTo token: Character) -> Parser<Character> {
  - returns: The parser which will only allow the given characters to pass, all others will fail.
  */
 public func character(isInString string: String) -> Parser<Character> {
-    return character { string.characters.contains($0) }
+    return character { string.contains($0) }
 }
 
 // MARK: Pre-made pasers using the character parser function for common sets of characters.
@@ -117,7 +120,7 @@ public let whitespaceOrNewline = character(isInCharacterSet: .whitespacesAndNewl
 // MARK: Pre-made pasers using the character parser function for single everyday characters.
 
 /// Only the comma character will pass, all others will fail.
-public let comma = character(isEqualTo:",")
+public let comma = character(isEqualTo: ",")
 
 /// Only the full-stop character will pass, all others will fail.
-public let fullstop = character(isEqualTo:".")
+public let fullstop = character(isEqualTo: ".")

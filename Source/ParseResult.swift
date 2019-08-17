@@ -17,7 +17,7 @@
 
 public enum ParseResult<Output> {
 
-    case success(result: Output, tail: TokenStream)
+    case success(result: Output, tail: Substring)
     case failure(details: ParseFailure)
 
 }
@@ -55,9 +55,8 @@ public extension ParseResult {
 public enum ParseFailure: Equatable {
 
     case insufficiantTokens
-    case unexpectedToken(token: TokenStream, tail: TokenStream)
+    case unexpectedToken(token: Character, tail: Substring)
     case custom(message: String)
-
 }
 
 /**
@@ -73,7 +72,7 @@ public func == (left: ParseFailure, right: ParseFailure) -> Bool {
     case (.insufficiantTokens, .insufficiantTokens):
         return true
     case (.unexpectedToken(let leftToken, let leftTail), .unexpectedToken(let rightToken, let rightTail)):
-        return String(leftToken) == String(rightToken) && String(leftTail) == String(rightTail)
+        return leftToken == rightToken && leftTail == rightTail
     case (.custom(let leftMesage), .custom(let rightMessage)):
         return leftMesage == rightMessage
     default:

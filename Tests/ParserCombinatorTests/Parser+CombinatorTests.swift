@@ -9,11 +9,13 @@
 import XCTest
 @testable import ParserCombinator
 
+private let testParseAToTrue = ParserTestHelper.characterAtoTrueParser()
+
 class ParserPlusCombinatorTests: XCTestCase {
 
     func testFollowedByParser() {
 
-        let parserUnderTest = ParserTestHelper.aParser().followed(by: ParserTestHelper.aParser())
+        let parserUnderTest = testParseAToTrue.followed(by: testParseAToTrue)
 
         if case .success(let results) = parserUnderTest.run(withInput: "aa") {
             XCTAssertEqual(true, results.result.0)
@@ -49,25 +51,26 @@ class ParserPlusCombinatorTests: XCTestCase {
 
     func testMakeOptionalParser() {
 
-        let parserUnderTest = ParserTestHelper.aParser().optional
+        let parserUnderTest = testParseAToTrue.optional
 
         if case .success(let results) = parserUnderTest.run(withInput: "aaa") {
             XCTAssertEqual(true, results.result)
-            XCTAssertEqual("aa", String(results.tail))
+            XCTAssertEqual("aa", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "a") {
             XCTAssertEqual(true, results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
+        // Succeeds even if not present as is optional.
         if case .success(let results) = parserUnderTest.run(withInput: "") {
             XCTAssertEqual(nil, results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
@@ -75,46 +78,46 @@ class ParserPlusCombinatorTests: XCTestCase {
 
     func testOneOrManyMatchesParser() {
 
-        let parserUnderTest = ParserTestHelper.aParser().oneOrMany
+        let parserUnderTest = testParseAToTrue.oneOrMany
 
         if case .success(let results) = parserUnderTest.run(withInput: "a") {
             XCTAssertEqual([true], results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "abab") {
             XCTAssertEqual([true, false, true, false], results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
-        XCTAssert(ParserTestHelper.hasInsufficiantTokens(parser: parserUnderTest))
+        XCTAssert(ParserTestHelper.hasInsufficiantTokens(parser: parserUnderTest, with: ""))
     }
 
     func testZeroOneOrManyMatchesParser() {
 
-        let parserUnderTest = ParserTestHelper.aParser().zeroOneOrMany
+        let parserUnderTest = testParseAToTrue.zeroOneOrMany
 
         if case .success(let results) = parserUnderTest.run(withInput: "a") {
             XCTAssertEqual([true], results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "abab") {
             XCTAssertEqual([true, false, true, false], results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "") {
             XCTAssertEqual([], results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
@@ -122,33 +125,33 @@ class ParserPlusCombinatorTests: XCTestCase {
 
     func testRepeatsGivenNumberOfTimesParser() {
 
-        let parserUnderTest = ParserTestHelper.aParser().repeats(times: 3)
+        let parserUnderTest = testParseAToTrue.repeats(times: 3)
 
         // The following two tests look for both different inputs and behaviour over multiple runs. (ie do counts reset)
         if case .success(let results) = parserUnderTest.run(withInput: "aba") {
             XCTAssertEqual([true, false, true], results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "baa") {
             XCTAssertEqual([false, true, true], results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "ababa") {
             XCTAssertEqual([true, false, true], results.result)
-            XCTAssertEqual("ba", String(results.tail))
+            XCTAssertEqual("ba", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         XCTAssert(ParserTestHelper.hasInsufficiantTokens(parser: parserUnderTest, with: "ab"))
         XCTAssert(ParserTestHelper.hasInsufficiantTokens(parser: parserUnderTest, with: "a"))
-        XCTAssert(ParserTestHelper.hasInsufficiantTokens(parser: parserUnderTest))
+        XCTAssert(ParserTestHelper.hasInsufficiantTokens(parser: parserUnderTest, with: ""))
     }
 
 }

@@ -19,35 +19,35 @@ class CharacterParserTests: XCTestCase {
 
         if case .success(let results) = parserUnderTest.run(withInput: "A") {
             XCTAssertEqual("A", results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "AA") {
             XCTAssertEqual("A", results.result)
-            XCTAssertEqual("A", String(results.tail))
+            XCTAssertEqual("A", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "Atail") {
             XCTAssertEqual("A", results.result)
-            XCTAssertEqual("tail", String(results.tail))
+            XCTAssertEqual("tail", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: "nottoken") {
-            XCTAssertEqual("n", String(unexpected.token))
-            XCTAssertEqual("ottoken", String(unexpected.tail))
+            XCTAssertEqual("n", unexpected.token)
+            XCTAssertEqual("ottoken", unexpected.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: ",A") {
-            XCTAssertEqual(",", String(unexpected.token))
-            XCTAssertEqual("A", String(unexpected.tail))
+            XCTAssertEqual(",", unexpected.token)
+            XCTAssertEqual("A", unexpected.tail)
         } else {
             XCTFail("The parser should find an unexpected token")
         }
@@ -63,35 +63,35 @@ class CharacterParserTests: XCTestCase {
 
         if case .success(let results) = parserUnderTest.run(withInput: "1") {
             XCTAssertEqual("1", results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "12") {
             XCTAssertEqual("1", results.result)
-            XCTAssertEqual("2", String(results.tail))
+            XCTAssertEqual("2", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "1tail") {
             XCTAssertEqual("1", results.result)
-            XCTAssertEqual("tail", String(results.tail))
+            XCTAssertEqual("tail", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: "nottoken") {
-            XCTAssertEqual("n", String(unexpected.token))
-            XCTAssertEqual("ottoken", String(unexpected.tail))
+            XCTAssertEqual("n", unexpected.token)
+            XCTAssertEqual("ottoken", unexpected.tail)
         } else {
             XCTFail("The parser should find an unexpected token")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: ",1") {
-            XCTAssertEqual(",", String(unexpected.token))
-            XCTAssertEqual("1", String(unexpected.tail))
+            XCTAssertEqual(",", unexpected.token)
+            XCTAssertEqual("1", unexpected.tail)
         } else {
             XCTFail("The parser should find an unexpected token")
         }
@@ -105,35 +105,35 @@ class CharacterParserTests: XCTestCase {
 
         if case .success(let results) = parserUnderTest.run(withInput: "A") {
             XCTAssertEqual("A", results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "AA") {
             XCTAssertEqual("A", results.result)
-            XCTAssertEqual("A", String(results.tail))
+            XCTAssertEqual("A", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "Atail") {
             XCTAssertEqual("A", results.result)
-            XCTAssertEqual("tail", String(results.tail))
+            XCTAssertEqual("tail", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: "nottoken") {
-            XCTAssertEqual("n", String(unexpected.token))
-            XCTAssertEqual("ottoken", String(unexpected.tail))
+            XCTAssertEqual("n", unexpected.token)
+            XCTAssertEqual("ottoken", unexpected.tail)
         } else {
             XCTFail("The parser should find an unexpected token")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: ",A") {
-            XCTAssertEqual(",", String(unexpected.token))
-            XCTAssertEqual("A", String(unexpected.tail))
+            XCTAssertEqual(",", unexpected.token)
+            XCTAssertEqual("A", unexpected.tail)
         } else {
             XCTFail("The parser should find an unexpected token")
         }
@@ -147,42 +147,42 @@ class CharacterParserTests: XCTestCase {
 
         if case .success(let results) = parserUnderTest.run(withInput: "A") {
             XCTAssertEqual("A", results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "B") {
             XCTAssertEqual("B", results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "AB") {
             XCTAssertEqual("A", results.result)
-            XCTAssertEqual("B", String(results.tail))
+            XCTAssertEqual("B", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "Atail") {
             XCTAssertEqual("A", results.result)
-            XCTAssertEqual("tail", String(results.tail))
+            XCTAssertEqual("tail", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: "nottoken") {
-            XCTAssertEqual("n", String(unexpected.token))
-            XCTAssertEqual("ottoken", String(unexpected.tail))
+            XCTAssertEqual("n", unexpected.token)
+            XCTAssertEqual("ottoken", unexpected.tail)
         } else {
             XCTFail("The parser should find an unexpected token")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: parserUnderTest, with: ",A") {
-            XCTAssertEqual(",", String(unexpected.token))
-            XCTAssertEqual("A", String(unexpected.tail))
+            XCTAssertEqual(",", unexpected.token)
+            XCTAssertEqual("A", unexpected.tail)
         } else {
             XCTFail("The parser should find an unexpected token")
         }
@@ -198,14 +198,14 @@ class CharacterParserTests: XCTestCase {
 
         if case .success(let results) = parserUnderTest.run(withInput: "A") {
             XCTAssertEqual("A", results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "Atail") {
             XCTAssertEqual("A", results.result)
-            XCTAssertEqual("tail", String(results.tail))
+            XCTAssertEqual("tail", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
