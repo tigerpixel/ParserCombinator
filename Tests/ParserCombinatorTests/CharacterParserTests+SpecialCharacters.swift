@@ -17,35 +17,35 @@ extension CharacterParserTests {
 
         if case .success(let results) = comma.run(withInput: ",") {
             XCTAssertEqual(",", results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = comma.run(withInput: ",,") {
             XCTAssertEqual(",", results.result)
-            XCTAssertEqual(",", String(results.tail))
+            XCTAssertEqual(",", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = comma.run(withInput: ",has a comma") {
             XCTAssertEqual(",", results.result)
-            XCTAssertEqual("has a comma", String(results.tail))
+            XCTAssertEqual("has a comma", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: comma, with: "not a comma") {
-            XCTAssertEqual("n", String(unexpected.token))
-            XCTAssertEqual("ot a comma", String(unexpected.tail))
+            XCTAssertEqual("n", unexpected.token)
+            XCTAssertEqual("ot a comma", unexpected.tail)
         } else {
             XCTFail("The parser should find an unexpected token")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: comma, with: "1,") {
-            XCTAssertEqual("1", String(unexpected.token))
-            XCTAssertEqual(",", String(unexpected.tail))
+            XCTAssertEqual("1", unexpected.token)
+            XCTAssertEqual(",", unexpected.tail)
         } else {
             XCTFail("The parser should find an unexpected token")
         }
@@ -58,35 +58,35 @@ extension CharacterParserTests {
 
         if case .success(let results) = fullstop.run(withInput: ".") {
             XCTAssertEqual(".", results.result)
-            XCTAssertEqual("", String(results.tail))
+            XCTAssertEqual("", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = fullstop.run(withInput: "..") {
             XCTAssertEqual(".", results.result)
-            XCTAssertEqual(".", String(results.tail))
+            XCTAssertEqual(".", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = fullstop.run(withInput: ".has a full stop") {
             XCTAssertEqual(".", results.result)
-            XCTAssertEqual("has a full stop", String(results.tail))
+            XCTAssertEqual("has a full stop", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: fullstop, with: "not a full stop") {
-            XCTAssertEqual("n", String(unexpected.token))
-            XCTAssertEqual("ot a full stop", String(unexpected.tail))
+            XCTAssertEqual("n", unexpected.token)
+            XCTAssertEqual("ot a full stop", unexpected.tail)
         } else {
             XCTFail("The parser should find an unexpected token")
         }
 
         if let unexpected = ParserTestHelper.findUnexpectedToken(running: fullstop, with: "1.") {
-            XCTAssertEqual("1", String(unexpected.token))
-            XCTAssertEqual(".", String(unexpected.tail))
+            XCTAssertEqual("1", unexpected.token)
+            XCTAssertEqual(".", unexpected.tail)
         } else {
             XCTFail("The parser should find an unexpected token")
         }

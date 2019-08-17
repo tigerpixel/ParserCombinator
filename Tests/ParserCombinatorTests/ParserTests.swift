@@ -16,18 +16,18 @@ class ParserTests: XCTestCase {
     func testMapParser() {
 
         // Boolean result of mapped to the strings 'true' and 'false'.
-        let parserUnderTest = ParserTestHelper.aParser().map { $0 ? "true" : "false" }
+        let parserUnderTest = ParserTestHelper.characterAtoTrueParser().map { $0 ? "true" : "false" }
 
         if case .success(let results) = parserUnderTest.run(withInput: "aaa") {
             XCTAssertEqual("true", results.result)
-            XCTAssertEqual("aa", String(results.tail))
+            XCTAssertEqual("aa", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
 
         if case .success(let results) = parserUnderTest.run(withInput: "sss") {
             XCTAssertEqual("false", results.result)
-            XCTAssertEqual("ss", String(results.tail))
+            XCTAssertEqual("ss", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
@@ -41,7 +41,7 @@ class ParserTests: XCTestCase {
 
         if case .success(let results) = aParser.run(withInput: "tail") {
             XCTAssertEqual("a", results.result)
-            XCTAssertEqual("tail", String(results.tail))
+            XCTAssertEqual("tail", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
@@ -50,7 +50,7 @@ class ParserTests: XCTestCase {
 
         if case .success(let results) = oneParser.run(withInput: "tail") {
             XCTAssertEqual(1, results.result)
-            XCTAssertEqual("tail", String(results.tail))
+            XCTAssertEqual("tail", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
@@ -59,7 +59,7 @@ class ParserTests: XCTestCase {
 
         if case .success(let results) = oneFloatParser.run(withInput: "tail") {
             XCTAssertEqual(1.0, results.result)
-            XCTAssertEqual("tail", String(results.tail))
+            XCTAssertEqual("tail", results.tail)
         } else {
             XCTFail("The parser should succeed")
         }
