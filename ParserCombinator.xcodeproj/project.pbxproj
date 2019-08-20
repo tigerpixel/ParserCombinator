@@ -216,7 +216,7 @@
 			children = (
 				0C1242081E7B19BD00457CBA /* Docs */,
 				0C07C29D1E5251BA00A921A8 /* ParserCombinator */,
-				0C1242061E7B19A000457CBA /* Source */,
+				0C1242061E7B19A000457CBA /* Sources */,
 				0C1242071E7B19B700457CBA /* Tests */,
 				0C07C29C1E5251BA00A921A8 /* Products */,
 			);
@@ -245,18 +245,12 @@
 			path = ParserCombinator;
 			sourceTree = "<group>";
 		};
-		0C1242061E7B19A000457CBA /* Source */ = {
+		0C1242061E7B19A000457CBA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				0C12421A1E7B1AA400457CBA /* Parser.swift */,
-				0C12421B1E7B1AA400457CBA /* Parser+Run.swift */,
-				0C3C65B41E85B96D009ED072 /* Parser+Combinators.swift */,
-				0C131CDE1E84A99B00C60A38 /* ParserOperators.swift */,
-				0C12421C1E7B1AA400457CBA /* ParseResult.swift */,
-				0C1437901E7CC990006E3D06 /* ConvienienceParsers */,
-				0C14378E1E7CC94E006E3D06 /* FoundationExtensions */,
+				0C2ACB63230A90A10091366A /* ParserCombinator */,
 			);
-			path = Source;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		0C1242071E7B19B700457CBA /* Tests */ = {
@@ -332,6 +326,20 @@
 				0C131CDA1E8493D000C60A38 /* NumberParserTests.swift */,
 			);
 			name = ConvenienceParsers;
+			sourceTree = "<group>";
+		};
+		0C2ACB63230A90A10091366A /* ParserCombinator */ = {
+			isa = PBXGroup;
+			children = (
+				0C12421A1E7B1AA400457CBA /* Parser.swift */,
+				0C12421B1E7B1AA400457CBA /* Parser+Run.swift */,
+				0C3C65B41E85B96D009ED072 /* Parser+Combinators.swift */,
+				0C131CDE1E84A99B00C60A38 /* ParserOperators.swift */,
+				0C12421C1E7B1AA400457CBA /* ParseResult.swift */,
+				0C1437901E7CC990006E3D06 /* ConvienienceParsers */,
+				0C14378E1E7CC94E006E3D06 /* FoundationExtensions */,
+			);
+			path = ParserCombinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

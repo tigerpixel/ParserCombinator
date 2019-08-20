@@ -48,3 +48,10 @@
 * Remove string copies using Swift 5 string updates.
 * Remove some typealiases masking Swift types for transparency.
 * Increase unit test readability.
+
+## Version 2.0.1
+
+### *Released 2019-08-20*
+* Update to Swift Package Manager to make compatible with Swift 5
+* This version is only required is using SPM
+

@@ -1,3 +1,4 @@
+// swift-tools-version:5.0
 //
 //  Package.swift
 //  ParserCombinator
@@ -11,5 +12,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "ParserCombinator"
+    name: "ParserCombinator",
+    products: [
+        .library(name: "ParserCombinator", targets: ["ParserCombinator"])
+    ],
+    targets: [
+        .target(name: "ParserCombinator"),
+        .testTarget(name: "ParserCombinatorTests", dependencies: ["ParserCombinator"])
+    ]
 )
