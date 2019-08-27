@@ -9,9 +9,5 @@
 /// A set of tokens describing an integer number. The number can consist of one or more digits.
 public let integerNumber = digit.oneOrMany.map { characterArray -> Int in
 
-    guard let integerNumber = Int(String(characterArray)) else {
-        return 0
-    }
-
-    return integerNumber
+    Int(String(characterArray)) ?? 0
 }

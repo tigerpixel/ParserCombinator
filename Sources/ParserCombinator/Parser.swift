@@ -53,5 +53,5 @@ public extension Parser {
 
 public func pure<Output>(_ input: Output) -> Parser<Output> {
 
-    return Parser { ParseResult<Output>.success(result: input, tail: $0) }
+    Parser { ParseResult<Output>.success(result: input, tail: $0) }
 }

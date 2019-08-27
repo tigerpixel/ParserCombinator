@@ -23,7 +23,7 @@ public extension Parser {
      */
 
     func run(withInput input: String) -> ParseResult<Output> {
-        return parse(Substring(input))
+        parse(Substring(input))
     }
 
     /**

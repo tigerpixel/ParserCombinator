@@ -34,7 +34,7 @@ precedencegroup SequentialApplication {
 infix operator <*> : SequentialApplication
 
 public func <*> <T, U>(left: Parser<(T) -> U>, right: Parser<T>) ->  Parser<U> {
-    return left.followed(by: right).map { leftContents, rightContents in leftContents(rightContents) }
+    left.followed(by: right).map { leftContents, rightContents in leftContents(rightContents) }
 }
 
 /**
@@ -62,7 +62,7 @@ precedencegroup OptionalSequentialApplication {
 infix operator <?> : OptionalSequentialApplication
 
 public func <?> <T, U>(left: Parser<(T?) -> U>, right: Parser<T?>) ->  Parser<U> {
-    return left.followed(by: right).map { leftContents, rightContents in leftContents(rightContents) }
+    left.followed(by: right).map { leftContents, rightContents in leftContents(rightContents) }
 }
 
 /**
@@ -88,7 +88,7 @@ precedencegroup Map {
 infix operator <^> : Map
 
 public func <^> <T, U>(left: @escaping (T) -> U, right: Parser<T>) ->  Parser<U> {
-    return right.map(left)
+    right.map(left)
 }
 
 /**
@@ -152,7 +152,7 @@ precedencegroup DiscardFirst {
 infix operator *> : DiscardFirst
 
 public func *> <T, U>(left: Parser<T>, right: Parser<U>) ->  Parser<U> {
-    return { _ in { $0 }} <^> left <*> right
+    { _ in { $0 }} <^> left <*> right
 }
 
 /**
@@ -181,5 +181,5 @@ precedencegroup DiscardSecond {
 infix operator <* : DiscardSecond
 
 public func <* <T, U>(left: Parser<T>, right: Parser<U>) ->  Parser<T> {
-    return { firstContents in { _ in firstContents } } <^> left <*> right
+    { firstContents in { _ in firstContents } } <^> left <*> right
 }
