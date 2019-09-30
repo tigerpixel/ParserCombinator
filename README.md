@@ -25,12 +25,24 @@ Pull requests for improvements are welcome.
 There are no external requirements for this project, just Swift.
 
 - iOS 8.0+ / macOS 10.9+ / tvOS 9.0+ / watchOS 2.0+
-- Xcode 10.3+
-- Swift 5.0+
+- Xcode 11+
+- Swift 5.1+
 
 For previous versions of Xcode and Swift please see prior releases.
 
 ## Installation
+
+### Swift Package Manager
+
+The [Swift Package Manager](https://swift.org/package-manager) is the official tool for managing the distribution of Swift code. It is currently available for all Apple platforms. It can also be used with Linux but this project does not fully support Linux at this point in time.
+
+If you use it to manage your dependencies, simply add ParserCombinator to the dependencies value of your Package.swift file.
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/Tigerpixel/ParserCombinator.git", from: "2.1.0")
+]
+```
 
 ### Cocoapods
 
@@ -49,18 +61,6 @@ github "tigerpixel/ParserCombinator"
 ```
 
 If you use Carthage to build your dependencies, make sure you have added `ParserCombinator.framework` to the "_Linked Frameworks and Libraries_" section of your target, and have included them in your Carthage framework copying build phase.
-
-### Swift Package Manager
-
-The [Swift Package Manager](https://swift.org/package-manager) is the official tool for managing the distribution of Swift code. It is currently available for macOS. It can also be used with Linux but this project does not fully support Linux at this point in time.
-
-If you use it to manage your dependencies, simply add ParserCombinator to the dependencies value of your Package.swift file.
-
-```swift
-dependencies: [
-.Package(url: "https://github.com/Tigerpixel/ParserCombinator.git", majorVersion: 1)
-]
-```
 
 ### Git Submodule
 

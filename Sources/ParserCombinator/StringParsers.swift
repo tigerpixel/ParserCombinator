@@ -25,5 +25,5 @@ public let alphanumericString = alphanumeric.oneOrMany.map(toString)
 
 /// Only strings comprised exclusively of characters in the given characer set will pass.
 public func string(withCharactersInSet charSet: CharacterSet) -> Parser<String> {
-    return (character { charSet.contains($0.unicodeScalar) }).oneOrMany.map(toString)
+    (character { charSet.contains($0.unicodeScalar) }).oneOrMany.map(toString)
 }

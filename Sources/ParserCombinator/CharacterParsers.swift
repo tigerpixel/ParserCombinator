@@ -57,7 +57,7 @@ public func character(condition: @escaping (Character) -> Bool) -> Parser<Charac
  - returns: The parser whith the same semantic as the character set given.
  */
 public func character(isInCharacterSet charSet: CharacterSet) -> Parser<Character> {
-    return character { charSet.contains($0.unicodeScalar) }
+    character { charSet.contains($0.unicodeScalar) }
 }
 
 /**
@@ -71,7 +71,7 @@ public func character(isInCharacterSet charSet: CharacterSet) -> Parser<Characte
  - returns: The parser which will only allow the given character to pass, all others will fail.
  */
 public func character(isEqualTo token: Character) -> Parser<Character> {
-    return character { $0 == token }
+    character { $0 == token }
 }
 
 /**
@@ -85,7 +85,7 @@ public func character(isEqualTo token: Character) -> Parser<Character> {
  - returns: The parser which will only allow the given characters to pass, all others will fail.
  */
 public func character(isInString string: String) -> Parser<Character> {
-    return character { string.contains($0) }
+    character { string.contains($0) }
 }
 
 // MARK: Pre-made pasers using the character parser function for common sets of characters.
