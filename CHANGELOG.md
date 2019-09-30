@@ -57,7 +57,9 @@
 
 ## Version 2.1.0
 
-### *Released 2019-08-20*
+### *Released 2019-09-30*
 * Update to Swift Package Manager to make compatible with Swift 5.1.
 * Added Swift package manager capabilities to all platforms.
+* Updated Swift code to take advantage of Swift 5.1 features.
+* Swiftlint version update to 0.35.0
 

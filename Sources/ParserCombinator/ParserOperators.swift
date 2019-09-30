@@ -152,7 +152,7 @@ precedencegroup DiscardFirst {
 infix operator *> : DiscardFirst
 
 public func *> <T, U>(left: Parser<T>, right: Parser<U>) ->  Parser<U> {
-    { _ in { $0 }} <^> left <*> right
+    return { _ in { $0 }} <^> left <*> right
 }
 
 /**
@@ -181,5 +181,5 @@ precedencegroup DiscardSecond {
 infix operator <* : DiscardSecond
 
 public func <* <T, U>(left: Parser<T>, right: Parser<U>) ->  Parser<T> {
-    { firstContents in { _ in firstContents } } <^> left <*> right
+    return { firstContents in { _ in firstContents } } <^> left <*> right
 }

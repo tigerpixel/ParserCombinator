@@ -25,8 +25,8 @@ Pull requests for improvements are welcome.
 There are no external requirements for this project, just Swift.
 
 - iOS 8.0+ / macOS 10.9+ / tvOS 9.0+ / watchOS 2.0+
-- Xcode 10.3+
-- Swift 5.0+
+- Xcode 11+
+- Swift 5.1+
 
 For previous versions of Xcode and Swift please see prior releases.
 
@@ -40,7 +40,7 @@ If you use it to manage your dependencies, simply add ParserCombinator to the de
 
 ```swift
 dependencies: [
-.Package(url: "https://github.com/Tigerpixel/ParserCombinator.git", majorVersion: 1)
+    .package(url: "https://github.com/Tigerpixel/ParserCombinator.git", from: "2.1.0")
 ]
 ```
 

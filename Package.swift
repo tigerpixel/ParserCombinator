@@ -13,6 +13,10 @@ import PackageDescription
 
 let package = Package(
     name: "ParserCombinator",
+    platforms: [
+        // Other platforms compile as far back as possible by default.
+        .macOS(.v10_10)
+    ],
     products: [
         .library(name: "ParserCombinator", targets: ["ParserCombinator"])
     ],
